@@ -9,7 +9,7 @@ Hacer código **entendible** es tan importante como hacer código ejecutable.
 * Matías Lee
 * Diego Lis
 
-## 📆️ Cronograma
+## 📆 Cronograma
 ### Parciales presenciales
 * 13/09 y 20/10  (fechas tentativas)
 * Recuperatorio 24/11
@@ -49,10 +49,10 @@ Springer, 2005
 ## 📑️ Plan de estudios
 * Objetivo: Planear, ejecutar y administrar un software de tamaño pequeño.
 
-### **Introducción**
+### **Introducción** [[Ingenieria/ing-soft-1/1-intro]]
 + ✅️ El dominio del problema
 + ✅️ El desafío de la Ingeniería del Software
-+ ⬜️ El enfoque de la Ingeniería del Software
++ ✅️ El enfoque de la Ingeniería del Software
 
 ### **El proceso del software**
 + ⬜️ Procesos, Modelo de procesos. Componentes. Enfoque ETVX.
@@ -61,10 +61,10 @@ Springer, 2005
 + ⬜️ Modelos de procesos de desarrollo: Cascada, Prototipado, Iterarivo.
 + ⬜️ Otros procesos del software: Afministeracion del proyecto, Proceso de inspección, Administración de configuración, Administración de cambios, Administración del proceso (CMM).
 
-### **Análisis y especificación de los requerimientos del software**
-+ ⬜️ Requerimientos del software, Necesidad de la especificación de requerimientos, Proceso de requerimientos.
-+ ⬜️ Análisis del problema: Enfoque informal, Modelo de flujo de datos (DFD), Modelo orientado a objetos (UML), Prototipado.
-+ ⬜️ Especificación de los requeimientos del software: Características, Componentes, Lenguajes de especificación, Estructura de un documento.
+### **Análisis y especificación de los requerimientos del software**  [[2-analysis-espec]]
++ ✅️ Requerimientos del software, Necesidad de la especificación de requerimientos, Proceso de requerimientos.
++ ✅️ Análisis del problema: Enfoque informal, Modelo de flujo de datos (DFD), Modelo orientado a objetos (UML), Prototipado.
++ ✅️ Especificación de los requeimientos del software: Características, Componentes, Lenguajes de especificación, Estructura de un documento.
 + ⬜️ Especificación funcional con Casos de Uso: Concepros, Estructura, Abstracción.
 + ⬜️ Validación
 + ⬜️ Metricas: Tamaño, Calidad
@@ -128,3 +128,4 @@ Springer, 2005
 + ⬜️ Responsabilidad y ética profesional.
 
 ** Se toma SIEMPRE testing
+Clase de modelado [[2a-modelados]] 

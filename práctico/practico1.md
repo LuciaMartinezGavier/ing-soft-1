@@ -2,7 +2,7 @@
 Computación?
 
 La Ingeniería del software es el enfoque sistematico al desarrollo, operación y
-mantenimiento de softaware
+mantenimiento de softaware.
 
 Su relación con la Ciencia de la Computación es que es englobada por esta. Es 
 necesario producir código entendible y eficiente de buena calidad. Y la
@@ -16,6 +16,7 @@ puede deteriorar los componentes.
 Otra diferencia es que lo más costoso en esta industria es el tiempo de la
 persona. En otras áreas puede suceder que otros recursos son más costosos.
 
+Se debe mantener para adaptarse a las diferentes necesidades.
 
 3. Si el objetivo principal es hacer al software mantenible, liste algunas de
 las cosas que usted haría y algunas de las cosas que no haría durante la
