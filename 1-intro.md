@@ -6,15 +6,14 @@ Hay mucho extra que toma tiempo y esfuerzo.
 Se agrega Documentación, Testing
 
 ---
-
 La ingeniería del software se define como el enfoque sitemático al desarrollo,
 operación, mantienimiento y *retirement* del software.
+***
 
----
-
-<!-- FIXME: Agregar definición de software -->
-
----
+***
+**Software** (IEEE 610.12-1990):
+Colección de programas, procedimientos, y la documentación y datos asociados que determinan la operación de un sistema de computación.
+***
 ## El Dominio del Problema
 El dominio del problema es *industrial strength software*
 
@@ -53,9 +52,7 @@ sistema.
 
 | Mantenimiento correctivo | Mantenimiento adaptativo |
 | ------------------------ | ------------------------ |
-| Correcciones de errores residuales que quedaron en el sistema y hay que
-corregirlos a medida que se detectan | Adaptación del software a las necesidades
-del entorno cambiante** |
+| Correcciones de errores residuales que quedaron en el sistema y hay que corregirlos a medida que se detectan | Adaptación del software a las necesidades del **entorno cambiante** |
 
 ** Uno de los mayores problemas en el desarrollo del software es entender lo que
 se desea del software. Tanto los clientes como los desarrolladores deben
@@ -166,8 +163,6 @@ Se cumplen...
 + En tiempo?
 + en Presupuesto?
 + Objetivos de calidad?
-
-<!-- TODO: terminar de pulir -->
 
 ---
 Ejercicios en [[practico1]]
