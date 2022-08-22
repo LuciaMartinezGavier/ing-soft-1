@@ -1,4 +1,5 @@
-# 🧐📝 Análisis y especificación de los requisitos del software
+# 🧐📝 Análisis y especificación de los Requisitos del Software
+
 ![](https://imgur.com/s8Hxlrg.png)
 
 👥 Identificar y especificar los requisitos (involucra **interacción con la gente** y no puede automatizarse).    
@@ -8,11 +9,9 @@ Un buen analista debe asesorar y convencer y que el cliente acepte en lo que uno
 + **Entrada**: Las necesidades se encuentran en la cabeza de alguien (ideas abstractas)
 + **Salida** : Un detalle preciso de lo que será el sistema futuro. **SRS-System Requirements Specification**.
 
-El proceso no es lineal; es iterativo y en paralelo.
-![](https://imgur.com/kh7GfZN.png)
-
 ## 📜 SRS
 Debe dar una clara comprensión de lo que se espera de un determinado software.
+
 La SRS es el medio para **reconciliar las diferencias** y **especificar las necesidades** del cliente/usuario de manera que todos entiendan.
 
 Hay abogados y escribanos involucrados. Es un **contrato** o acuerdo entre cliente/usuario y quién suministrará el software. No debe ser ambigua.
@@ -23,17 +22,20 @@ Hay abogados y escribanos involucrados. Es un **contrato** o acuerdo entre clien
 Hay que tenerlos en concreto para producir el software.
 
 ***
-**Requerimientos **(IEEE)
+**Requerimientos** (IEEE)
 1. Una condición o capacidad necesaria de un usuario para solucionar un problema o alcanzar sus objetivos.
 2. Una condición o capacidad necesaria que debe poseer o cumplir un sistema \[...\].
 ***
 
 ### ¿Por qué la SRS es necesaria?
-Cliente: No comprende el proceso de desarrollo de software. La SRS ayuda al usuario a comprender sus necesidades. 
-Desarrollador: No conoce el problema ni su área de aplicación.
 
+#### **Una SRS establece el contrato entre el ciente y el proveedor respecto a lo que el software va a hacer**
+Cliente: No comprende el proceso de desarrollo de software. La SRS ayuda al usuario a comprender sus necesidades.   
+Desarrollador: No conoce el problema ni su área de aplicación.  
 - **Ayuda** al usuario a comprender sus necesidades
-- La SRS provee un referencia para la **validación** del producto final. (Determina el resultado correcto). Verificación: "el software satisface la SRS".
+
+#### **La SRS provee un referencia para la validación del producto final.**
+(Determina el resultado correcto). Verificación: "el software satisface la SRS".
 
 #### **Una SRS de alta calidad es esencial para obtener un software de calidad** 
 Los errores de requerimientos solo se manifiestan en el software final. Los defectos de requerimientos no son pocos, ejemplo: 45% de los errores en testing correspondían a errores de requerimientos (siendo el 25% del total de defectos encontrados en el proyecto).
@@ -44,15 +46,16 @@ Los cambios de requerimientos pueden costar demasiado (hasta un 40%).
 En cada etapa es más caro el precio de encontrar y resolver un error de los requerimientos.
 
 ### Proceso de requerimientos
-**Secuencia de pasos que se necesita realizar para convertir las necesidades del usuario en la SRS**
-Es iterativo y en paralelo: Algunas partes pueden estar siendo especificadas mientras otras están aún bajo análisis. 
+ **Secuencia de pasos que se necesita realizar para convertir las necesidades del usuario en la SRS**
 
-![](https://imgur.com/7zGOLdq.png)
+| | |
+| --- | --- |
+|  ![](https://imgur.com/7zGOLdq.png)| Es iterativo y en paralelo: Algunas partes pueden estar siendo especificadas mientras otras están aún bajo análisis. |
 
 **Actividades básicas**
 1. Análisis del problema o requerimientos
 2. Especificación de los requerimientos.
-3.  Validacion.
+3.  Validación.
 
 La transición del análisis a la especificación es complicada.
 1. La especificación se enfoca en el **comportamiento externo.**
@@ -73,8 +76,8 @@ El análisis incluye:
 
 Es importante:
 + Obtener la información necesaria
-+ Lluvia de ideas: discutir. **Iteractuar** con el cliente para establecer propiedades
-+ Relaciones iterpersonales
++ Lluvia de ideas: discutir. **Interactuar** con el cliente para establecer propiedades
++ Relaciones interpersonales
 + Habilidades de comunicación
 + Organizar la información
 + Asegurar **completitud**
@@ -84,14 +87,14 @@ Es importante:
  **Particionar el problema**
  **Estrategia**: Descomponer e problema en pequeñas partes, comprenderlas y relacionarlas entre ellas.
  
-Comprender los subproblemas y la relación respecto a
+Comprender los sub-problemas y la relación respecto a
 + Funciones
 + Objetos
 + Eventos del sistema
 
 ### Enfoque informal
-No hay una metodología definida; la informacion se obtiene a través del análisis, observación, iteracción, discusión,... .
-No se construye un modeo formal del sistema.
+No hay una metodología definida; la información se obtiene a través del análisis, observación, interacción, discusión,... .
+No se construye un modelo formal del sistema.
 La información recogida se plasma y organiza directamente en la SRS, la cual es el objeto de revisión con el cliente.
 
 ### Modelado de flujo de datos
@@ -100,11 +103,11 @@ Se enfoca en las funciones realizadas en el sistema.
 Para el modelado se usan **diagramas de flujos de datos** (DFD) y **descomposición funcional**.
 
 #### DFD
-**Un DFD es una represetación gráfica del flujo de datos a través del sistema.**
+Interpretación del sistema como una transformación de entradas y salidas, donde las transformaciones se realizan a través de "transformadores/procesos".
 
-Interpretación del sistema como una transformación de entradas y salidas, dodnde las transformaciones se realizan a través de "transformadores/procesos".
-
-![DFD de un sistema de pago de salarios](https://imgur.com/LKwxEDB.png)
+| | |
+|--- |---|
+| **Un DFD es una representación gráfica del flujo de datos a través del sistema.**| ![DFD de un sistema de pago de salarios](https://imgur.com/LKwxEDB.png) |  
 
 + **Transformadores**: Burbujas. Sus nombres son verbos.
 + **Datos que fluyen**: Flechas con dirección entre burbujas. Sus nombres son sustantivos.
@@ -146,6 +149,7 @@ El diccionario de datos se representa con las flechas del DFD que están etiquet
 Se puede usar expresiones regulares para identificar los datos.
 
 Ejemplos:
+
 ```
 weekly timesheet = Employee_name +
 				   Employee_Id +
@@ -188,25 +192,12 @@ Employee_Id = digit + digit + digit + digit
 Una dueña de restaurante, quiere automatizar algunas partes del negocio.
 Entrevistas y cuestionarios. Recolectamos información en general.
 
-###### **Diagrama de contexto:**
-**Partes involucradas**: clientes (dueña) y usuarios (mozos, operador de la caja).
-
-![](https://imgur.com/amyk3yi.png)
-
-No todos los aspectos serán computables.
-
-###### **DFD del sistema existente**
-![](https://imgur.com/GADTuWV.png)
-
-###### **DFD del sistema propuesto**
-Se interactúa con el cliente. Pueden agregar nuevos aspectos.
-![](https://imgur.com/VCI0KTe.png)
-
-Se genera el sistema propuesto.
-
-###### **Diccionario de datos del DFD del sistema**
-![](https://imgur.com/burjAR3.png)
-
+|  Paso | Diagrama | Comentarios | 
+| --- | --- | --- |
+| Diagrama de contexto | ![](https://imgur.com/amyk3yi.png) | **Partes involucradas**: clientes (dueña) y usuarios (mozos, operador de la caja). No todos los aspectos serán computables. |
+| DFD del sistema existente | ![](https://imgur.com/GADTuWV.png) |Se interactúa con el cliente. Pueden agregar nuevos aspectos. |
+| DFD del sistema propuesto | ![](https://imgur.com/VCI0KTe.png) | Se genera el sistema propuesto. |
+| Diccionario de datos del DFD del sistema |  ![](https://imgur.com/burjAR3.png) | Formato de los datos, a través de expresiones regulares |
 
 ### Modelado orientado a objetos
 **Ventajas**:
@@ -216,16 +207,19 @@ Se genera el sistema propuesto.
 
 Un objeto **provee servicios** o **realiza operaciones**. Solo se accede a ellos a través de estos.
 
-#### Notación
-![](https://imgur.com/9VxS3NL.png)
+#### Notación 
+| ![](https://imgur.com/9VxS3NL.png) | Notación del modelado orientado a objetos |
+| --- | --- |
 
 + **Diagrama de clase**: Representa gráficamente la estructura del problema.
 + **Clase**: Conformada por: nombre, atributos y servicios o métodos
+
 | clase |ejemplo |
 | --- |---|
 | nombre de la clase |Prescription|
 | atributos |Refrigration Needs|
 |métodos |Warnings|
+
 + **Estructura de generalización-especialización**: utilizado para representar **herencia** de objetos. (líneas que unen con un triangulo)
 + **Multiplicidad de una relación** se representa con un círculo negro. Si hay dos puntitos negros es una relación N a N.
 + **Estructura de agregación**: modela la relación "está conformada por.." y se representa con un rombo.
@@ -270,15 +264,11 @@ Ayuda a visualizar cómo será el sistema final
 <!-- SE EVALÚA SIEMPRE-->
 ##### ❣️ **Correcta**:
 Cada requerimiento representa precisamente alguna característica deseada por el cliente en el sistema final. 
-```
-SRS -> representa -> cliente
-```
+`SRS -> representa -> cliente`
 
 ##### 🧡 **Completa**:
-Todas las características deseadas por el cliente están descritas. 
-```
-cliente -> determina -> SRS
-```
+Todas las características deseadas por el cliente están descritas.   
+`cliente -> determina -> SRS`
 
 ##### 💛 **No ambigua**:
 Cada requerimiento tiene exactamente un significado. Que no haya cosas subjetivas: "rápido" "lindo" . Los lenguajes formales ayudan a "desambiguar".
@@ -290,10 +280,9 @@ Que no se contradiga. Que toda la información esté ordenada ayuda a que sea co
 Casa requerimiento es verificable (existe algún proceso efectivo que puede verificar que el software final satisface el requerimiento). Es esencial la No-ambigüedad, y que la SRS sea comprensible (debe poder ser revisada por el desarrollador, el usuario y el cliente).
 
 ##### 💜 **Rastreable**:
-Se debe poder determinar el origen de cada requerimiento y cómo éste se relaciona a los elementos del software.
-```
-requerimiento está en SRS <=> elemento está en el Software
-```
+Se debe poder determinar el origen de cada requerimiento y cómo éste se relaciona a los elementos del software.  
+`requerimiento está en SRS <=> elemento está en el Software`
+
 `=>` Dado un requerimiento se debe poder detectar en qué elementos de diseño o código tiene impacto.  
 `<=` Dado un elemento de diseño o código se debe poder rastrear que requerimientos está atendiendo.
 
@@ -474,7 +463,7 @@ Hay muchas posibilidades de malentendidos en el proceso de análisis y especific
 | Hechos incorrectos | 10 - 30 % |
 | Ambigüedad         |  5 - 20 % | 
 
-## Proceso
+### Proceso
 Proceso de *inspección estándar*.
 La SRS se revisa por un grupo de personas, conformado por autor, **cliente**, representantes de **usuarios** y de desarrolladores.
 
@@ -484,7 +473,7 @@ Se pueden detectar entre el 40% y el 80% de los errores de requerimientos.
 
 Hay herramientas automáticas o semi-automáticas que soportan lenguajes de especificación formal y permiten verificar consistencia, dependencias circulares, o propiedades específicas. También permiten simular para poder comprender completitud y corrección.
 
-## 📐 Métricas
+### 📐 Métricas
 Para poder estimar costos y tiempos, y planear el proyecto se necesita "medir" el esfuerzo que demandará.
 Una métrica es importante solo si es útil para el seguimiento o control de costos, calendario o calidad.
 
@@ -554,7 +543,7 @@ puntos_función = CAF * UFP;
 //                 =  50 LOC en C++ o Java
 ```
 
-### Métricas de calidad
+#### Métricas de calidad
 Se necesitan buenas métricas de calidad para **evaluar la calidad de la SRS**.
 
 **Métricas de calidad directa**: Evalúan la calidad del documento estimando el valor de los atributos de calidad de la SRS.
