@@ -29,18 +29,18 @@ Hay que tenerlos en concreto para producir el software.
 
 ### ¿Por qué la SRS es necesaria?
 
-#### **Una SRS establece el contrato entre el ciente y el proveedor respecto a lo que el software va a hacer**
+**Una SRS establece el contrato entre el ciente y el proveedor respecto a lo que el software va a hacer.**  
 Cliente: No comprende el proceso de desarrollo de software. La SRS ayuda al usuario a comprender sus necesidades.   
 Desarrollador: No conoce el problema ni su área de aplicación.  
 - **Ayuda** al usuario a comprender sus necesidades
 
-#### **La SRS provee un referencia para la validación del producto final.**
+**La SRS provee un referencia para la validación del producto final.**  
 (Determina el resultado correcto). Verificación: "el software satisface la SRS".
 
-#### **Una SRS de alta calidad es esencial para obtener un software de calidad** 
+**Una SRS de alta calidad es esencial para obtener un software de calidad.**   
 Los errores de requerimientos solo se manifiestan en el software final. Los defectos de requerimientos no son pocos, ejemplo: 45% de los errores en testing correspondían a errores de requerimientos (siendo el 25% del total de defectos encontrados en el proyecto).
 
-#### **Una buena SRS reduce los costos de desarrollo**
+**Una buena SRS reduce los costos de desarrollo.**  
 Una buena SRS contribuye a minimizar cambios y errores.
 Los cambios de requerimientos pueden costar demasiado (hasta un 40%).
 En cada etapa es más caro el precio de encontrar y resolver un error de los requerimientos.
@@ -72,7 +72,7 @@ El análisis incluye:
 1. Entrevistas con el cliente y usuarios
 2. Lectura de manuales
 3. Estudio del sistema actual
-4. Ayudar al cliente/usuario a comprender las nuevas posibilidades
+4. Ayudar al cliente/usuario a comprender las nuevas posibilidades <!--Importante-->
 
 Es importante:
 + Obtener la información necesaria
@@ -88,8 +88,8 @@ Es importante:
  **Estrategia**: Descomponer e problema en pequeñas partes, comprenderlas y relacionarlas entre ellas.
  
 Comprender los sub-problemas y la relación respecto a
-+ Funciones
-+ Objetos
++ Funciones (análisis estructural)
++ Objetos <!--palabras clave: abstracción, interfaz-->
 + Eventos del sistema
 
 ### Enfoque informal
@@ -103,8 +103,9 @@ Se enfoca en las funciones realizadas en el sistema.
 Para el modelado se usan **diagramas de flujos de datos** (DFD) y **descomposición funcional**.
 
 #### DFD
-Interpretación del sistema como una transformación de entradas y salidas, donde las transformaciones se realizan a través de "transformadores/procesos".
-
+<!-- Se toma en el Take Home -->
+Interpretación del sistema como una transformación de entradas y salidas, donde las transformaciones se realizan a través de "transformadores/procesos".  
+Método de análisis estructurado.
 | | |
 |--- |---|
 | **Un DFD es una representación gráfica del flujo de datos a través del sistema.**| ![DFD de un sistema de pago de salarios](https://imgur.com/LKwxEDB.png) |  
@@ -118,7 +119,7 @@ Interpretación del sistema como una transformación de entradas y salidas, dond
 
 Usualmente se muestran sólo las entradas/salidas más significativas y se ignoran las de menor importancia (como los mensajes de error).  
 No debe decir **cómo** se realiza una transformación.  
-No hay loops ni razonamiento condicional. Un DFS **no** es un diagrama de control, no debería existir diseño ni pensamiento algorítmico.
+No hay loops ni razonamiento condicional. Un DFS **no** es un diagrama de control, no debería existir diseño ni pensamiento algorítmico. <!--Importante-->
 
 ##### Cómo dibujar el DFD de un sistema:
 1. Identificar entradas, salidas, fuentes, sumideros del sistema
@@ -240,9 +241,9 @@ En estos pasos, puede haber "huecos" por ejemplo clases que todavía no se sabe 
 ### Prototipado 
 <!-- TODO: estudiar del libro 3.2.4 -->
 Se construye un  sistema parcial prototípico.
-Ayuda a visualizar cómo será el sistema final
+Ayuda a visualizar cómo será el sistema final.
 
-#### Enfoques
+#### Enfoques del prototipado
 **Descartable**: el prototipo se construye con la idea de desecharlo luego de culminada la fase de requerimientos
 **Evolucionario**: Se construye con la idea de que evolucionará al sistema final.
 
@@ -281,7 +282,7 @@ Casa requerimiento es verificable (existe algún proceso efectivo que puede veri
 
 ##### 💜 **Rastreable**:
 Se debe poder determinar el origen de cada requerimiento y cómo éste se relaciona a los elementos del software.  
-`requerimiento está en SRS <=> elemento está en el Software`
+`requerimiento está en SRS <=> elemento está en el producto final`
 
 `=>` Dado un requerimiento se debe poder detectar en qué elementos de diseño o código tiene impacto.  
 `<=` Dado un elemento de diseño o código se debe poder rastrear que requerimientos está atendiendo.
@@ -298,6 +299,7 @@ Se necesita definir un orden de prioridades en la construcción para reducir rie
 <!-- Nota: Dar bola a las características deseables.  -->
 
 ### 🧱 Componentes de la SRS
+<!--Importante-->
 #### Requerimientos sobre funcionalidad ✅
 * Conforma la mayor parte de la especificación
 * Especifica toda la **funcionalidad** que el sistema debe proveer.*
@@ -343,10 +345,10 @@ Realidad: **lenguaje natural**. No usar conjugación de verbos. La gran ventaja 
 
 Los **lenguajes formales** deben ser fáciles y precisos. Vemos en ingeniería II, se usan para sistemas muy críticos.
 
-Lo ideal es mezclar ambos enfoques
+Lo ideal es mezclar ambos enfoques.
 
 ### 📡 Alcance
-<!--No se suele tomar, importante para el TH -->
+<!--No se suele tomar, importante para el Take Home -->
 * ¿Qué cosas entran o no en el proyecto?
 * Objetivos, entregables y requerimientos. Tiempos de entrega.
 * ¿Cuáles son la prioridades? Para que hacer primero.
@@ -357,7 +359,7 @@ Lo ideal es mezclar ambos enfoques
 Las estructuras estandarizadas ayudan a la comprensión por parte de otros y ayudan a la completitud.
 ***
 **Guía de la IEEE**
-1. Introducción 
+1. Introducción:
 	1. Propósito 
 	2. Alcance
 	3. Definiciones, acrónimos y abreviaciones
@@ -375,7 +377,7 @@ Las estructuras estandarizadas ayudan a la comprensión por parte de otros y ayu
 		2. Interfaces con el hardware
 		3. Interfaces con el software
 		4. Interfaces de comunicación
-	2. Requerimientos funcionales
+	2. Requerimientos funcionales <!--Take Home, no se dice cómo se va a hacer -->
 		1. Modo 1: Requerimientos funcionales 1.1 y 1.n
 		2. Modo m: Requerimientos funcionales m.1 y m.n'
 	3. Requerimientos de desempeño
@@ -387,28 +389,33 @@ Las estructuras estandarizadas ayudan a la comprensión por parte de otros y ayu
  En general, no se especifican algoritmos solo la relación E/S.
 
 ### 🎭 Especificación funcional con Casos de Uso
+<!-- Take home y SE TOMA SIEMPRE, se usa mucho en el Front -->
 * Adecuado para sistemas interactivos.
 * Consiste en especificar cada función provista por el sistema. (enfoque tradicional).  
 * Cada sistema tiene muchos casos de uso.
+* Siempre usar reglas estrictas.
+* Son útiles porque son muy entendibles para los usuarios y para los clientes.
+* Permiten brainstorming con los clientes.
 
 #### Formato de los casos de uso
-+ [Caso de uso](#caso-de-uso) \#: `nombre del caso de uso`
++ [Caso de uso](#caso-de-uso) \#  `nombre del caso de uso`
 + [Actor](#actor) primario: `nombre del AP`
-+ Pre-condición: `descripción de la pre-condición` 
-+ (Ámbito: `subsistema al cual se aplica el caso de uso` )
++ (Pre-condición: `descripción de la pre-condición`)
++ (Ámbito: `subsistema al cual se aplica el caso de uso`)
 + [Escenario](#escenario) exitoso principal: `paso 1, ..., paso n`
 + Escenarios excepcionales: `excepción 1, ..., excepción n`
 + (Post-condiciones)
 
 ##### Caso de uso
+* Los casos de uso capturan el comportamiento del sistema como **interacción** de los actores con el sistema.
 * Un caso de uso es una colección de muchos escenarios.
 * El nombre del caso de uso especifica el objetivo del actor primario.
-* Los casos de uso capturan el comportamiento del sistema como **interacción** de los actores con el sistema.
 * Pueden ordenarse jerárquicamente.
 * Se enfocan en el comportamiento externo.
 * La forma básica es textual. Existen notaciones gráficas (diagramas) como soporte.
 * Los casos de uso **no** forman la SRS completa, sólo la parte funcional.
 * Los casos de uso se enumeran para referencias posteriores.
+* Se pueden organizan en jerarquías (subobjetivos)
 
 ##### Actor
 **Persona** o **sistema** que interactúa con el sistema propuesto para alcanzar un objetivo.
@@ -421,47 +428,56 @@ Un actor es una **entidad lógica** y hay actores *receptores* y actores *transm
 * Es un conjunto de acciones realizadas con el fin de alcanzar un objetivo bajo determinadas condiciones.
 * Se representan en secuencia pero no necesariamente esa es su implementación.
 * La lista de acciones puede contener acciones que no son necesarios para el objetivo del actor primario. Sin embargo el sistema deba asegurar que todos los objetivos puedan cumplirse.
+* Para cada punto actúa uno de los actores, en el siguiente debe ser otro actor el que realiza las acciones.
+* No hay nada del manejo interno del sistema.
+* Se pueden mencionar casos de uso de otra jerarquía, que estén especificados aparte.
 
-* El **escenario exitoso principal** sucede cuando todo funciona normalmente y **se alcanza el objetivo**.
+* `paso_n = actor1 + acción1, ..., actor1 + acción_m`
+* `paso_n+1 = actor2 + respuesta1, ...`
+
+* El **escenario exitoso principal** sucede cuando todo funciona normalmente y **se alcanza el objetivo**. Mientras más exhaustivo, mejor. Porque estos casos serán usados como oráculo.
 * Los **escenarios alternativos** (de extensión o de excepción) suceden cuando algo sale mal y **el objetivo no puede ser alcanzado**.
-	* Las listas de excepciones no son exhaustivas.
+	* Las listas de excepciones no son exhaustivas: Solo se ponen los más básicos
+	* Se ponen los que son errores específicos y necesitan un salida específica.
+	* `escenario de error = error + respuesta`
 
 #### Elaboración de los Casos de Uso
 Pueden elaborarse haciendo refinamientos paso a paso.
 Se presentan cuatro niveles de abstracción:
-1. Actores y objetivos
+1. **Actores y objetivos**
 	1. Preparar una lista de actores y objetivos.
 	2. Proveer un breve resumen del caso de uso.
 	3. Evaluar completitud.
 	* Esto define el ámbito del caso de uso
 
-2. Escenarios exitosos principales
+2. **Escenarios exitosos principales**
 	1. Para cada caso de uso, expandir el escenario principal.
 	2. Revisar para asegurar que se satisface el interés de los participantes y actores.
 
-3. Condiciones de falla
+3. **Condiciones de falla**
+	* Siempre listar las que parezcan más importantes, la exhaustividad es casi nula.
 	1. Por cada paso, identificar cómo y por qué puede fallar.
 	2. Listar las posibles condiciones de falla para cada caso de uso. 
 
-4. Manipulación de fallas
+4. **Manipulación de fallas**
 	1.  Especificar el comportamiento del sistema para cada condición de falla.
 	* El realizar esta etapa emergerán nuevas situaciones y actores.
 
 Se deben usar reglas de buena escritura técnica:
-* Usar gramática/oraciones simples
+* Usar gramática/oraciones *simples* y *claras*.
 * Especificar claramente todas las partes del caso de uso.
 * Cuando sea necesario, combinar o dividir pasos.
 
 ## 👍🏼 Validación de los requerimientos 
-### Errores
+### Errores típicos de la SRS
 Hay muchas posibilidades de malentendidos en el proceso de análisis y especificación.
 
-|        Error       |      %    | 
-| ------------------ | ----------|
-|       Omisión      |     30%   |
-|   Inconsistencia   | 10 - 30 % |
-| Hechos incorrectos | 10 - 30 % |
-| Ambigüedad         |  5 - 20 % | 
+|        Error       |      %    | La SRS no es.. |
+| ------------------ | ----------| -------------- |
+|       Omisión      |     30%   | Completa       |
+|   Inconsistencia   | 10 - 30 % | Consistente    |
+| Hechos incorrectos | 10 - 30 % | Correcta       |
+| Ambigüedad         |  5 - 20 % | No ambigua     |
 
 ### Proceso
 Proceso de *inspección estándar*.
@@ -470,25 +486,40 @@ La SRS se revisa por un grupo de personas, conformado por autor, **cliente**, re
 Se pueden detectar entre el 40% y el 80% de los errores de requerimientos.
 
  Son útiles las **listas de control**: aspectos que deberían haberse tenido en cuenta para ir chequeando.
+Ejemplo:  
+
+| | Checkear: |
+| --- | ---|
+|1 | ¿Se definieron todos los recursos de hardware? |
+|2| ¿Se especificaron los tiempos de respuestas de las funciones? |
+|3| ¿Se definió todo el hardware, el software externo y las interfaces de datos? |
+|4| ¿Se especificaron todas las funciones requeridas por el cliente? | 
+|5| ¿Son testeables todos los requerimientos? | 
+|6| ¿Se definió el estado inicial del sistema? |
+|7| ¿Se especificaron todas las respuestas a las condiciones excepcionales? | 
+|8| ¿Los requerimientos contienen restricciones que pueda controlar el diseñador? |
+|9| ¿Se especifican modificaciones futuras posibles? |
 
 Hay herramientas automáticas o semi-automáticas que soportan lenguajes de especificación formal y permiten verificar consistencia, dependencias circulares, o propiedades específicas. También permiten simular para poder comprender completitud y corrección.
 
 ### 📐 Métricas
-Para poder estimar costos y tiempos, y planear el proyecto se necesita "medir" el esfuerzo que demandará.
+Para poder **estimar costos y tiempos**, y planear el proyecto se necesita "medir" el esfuerzo que demandará.
 Una métrica es importante solo si es útil para el seguimiento o control de costos, calendario o calidad.
 
 #### Punto función
-Se determina solo con la SRS.
-Define el tamaño en términos de la "funcionalidad".
+<!-- SE EVALÚA SIEMPRE -->
+Se determina solo con la SRS.  
+Define el tamaño en términos de la "funcionalidad".  
+Métrica en términos de LOC.  
 
 **Tipo de funciones**:
-* Entradas externas: Tipo de entrada (dato/control) externa a la aplicación.
-* Salidas externas: Tipo de salida que deja el sistema.
-* Archivos lógicos internos: Grupo lógico de dato/control de información generado/usado/manipulado.
-* Archivos de interfaz externa: Archivos pasados/compartidos entre aplicaciones.
-* Transacciones externas: Input/output inmediatos (queries)
+1. Entradas externas: Tipo de entrada (dato/control) externa a la aplicación.
+2. Salidas externas: Tipo de salida que deja el sistema.
+3. Archivos lógicos internos: Grupo lógico de dato/control de información generado/usado/manipulado.
+4. Archivos de interfaz externa: Archivos pasados/compartidos entre aplicaciones.
+5. Transacciones externas: Input/output inmediatos (queries)
 
-Contar cada tipo de función diferenciado según sea *compleja*, *promedio* o *simple*.
+Contar cada tipo de función diferenciado según sea *compleja*, *promedio* o *simple*. Y se pondera con un número `w_ij`.
 
 `C_ij` determina la cantidad de funciones tipo "i" con complejidad "j"
 
@@ -504,22 +535,22 @@ for (int i = 1; i <= 5, i++){
 ```
 
 Ajustar el UFP de acuerdo a la **complejidad del entorno**. Se evalúa según las siguientes características:
-1. comunicación de datos
-2. procesamiento distribuido
-3. objetivos de desempeño
-4. carga en la configuración de operación
-5. tasa de transacción
-6. ingreso de datos online
-7. eficiencia del usuario final
-8. actualización online
-9. complejidad del procesamiento lógico
-10. reusabilidad
-11. facilidad para la instalación
-12. facilidad para la operación
-13. múltiples sitios
-14. intención de facilitar cambios
+1. Comunicación de datos
+2. Procesamiento distribuido
+3. Objetivos de desempeño
+4. Carga en la configuración de operación
+5. Tasa de transacción
+6. Ingreso de datos online
+7. Eficiencia del usuario final
+8. Actualización online
+9. Complejidad del procesamiento lógico
+10. Reusabilidad
+11. Facilidad para la instalación
+12. Facilidad para la operación
+13. Múltiples sitios
+14. Intención de facilitar cambios
 
-Casa uno de estos ítems debe evaluarse como:
+Casa uno de estos items debe evaluarse como:
 1. No presente: `p_i = 0`
 2. Influencia insignificante: `p_i = 1`
 3. Influencia moderada: `p_i = 2`
@@ -550,3 +581,6 @@ Se necesitan buenas métricas de calidad para **evaluar la calidad de la SRS**.
 
 **Métricas de calidad indirecta**: Evalúan la efectividad de las métricas de control de calidad usadas en el proceso en la fase de requerimientos.
 **El proceso debe estar bajo control estadístico**.
+
+***
+práctico [[Ingenieria/ing-soft-1/práctico/practico2]] 
