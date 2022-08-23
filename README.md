@@ -69,7 +69,7 @@ Springer, 2005
 + ✅️ Validación
 + ✅️ Métricas: Tamaño, Calidad
 
-### **Arquitectura del software**
+### **Arquitectura del software** [[3-arqui-soft]]
 + ⬜️ Rol de la arquitectura del software
 + ⬜️ Vistas: Módulos, Componentes y conectores, Asignación de recursos
 + ⬜️ Vista de Componentes y Conectores (C&C). Estilos arquitectónicos para C&C: Tubos y Filtros, Datos compartidos, Cliente-Servidor, Estratificados,
