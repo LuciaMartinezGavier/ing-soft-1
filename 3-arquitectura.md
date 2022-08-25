@@ -8,6 +8,8 @@ Es la primera de las tres etapas de **diseño** y la de más alto nivel:
 Da una vision de las partes del sistema y de las relaciones entre ellos.
 La arquitectura permite que los cambios sean simples de hacer en sistemas grandes y complejos.
 
+La idea de la arquitectura es la idea de *information hiding* y *Encapsulación*.
+
 El objetivo de la arquitectura es identificar subsistemas y la forma que interactúan entre ellos.
 ***
 **Definición**:
@@ -83,9 +85,10 @@ Adecuado para sistemas que fundamentalmente realizan *transformaciones de datos*
 * Tipo de conector: pipe (tubo). Unidireccional y no tiene bifurcaciones. Cada tubo solo conecta 2 componentes.
 
 **Restricciones**
-+ Cada filtro debe trabajar sin conocer la identidad de los filtros productores o consumidores.
++ Cada filtro debe trabajar sin (necesariamente) conocer la identidad de los filtros productores o consumidores. <!-- Puede conocerlo, pero no tiene que.-->
 + Un tubo debe conectar un puerto de salida de un filtro a un puerto de entrada de otro filtro.
 + Un sistema *puro* de *Pipe&Filter* usualmente requiere que cada filtro tenga su propio hilo de control.
+<!-- En los exámenes se piden ejemplos, no hacer el de las filminas --> 
 
 ##### Estilo de Datos Compartidos
 <!-- SE EVALÚA -->
@@ -106,7 +109,7 @@ Es pasivo.
 * Componentes: **clientes** y **servidores**
 	* Los clientes solo se comunican con el servidor, no con otros clientes.
 	* La comunicación es siempre iniciada por el cliente y usualmente sincrónica.
-* Conector: solicitud/respuesta (*request/reply*), es asimétrico.
+* Conector: solicitud/respuesta (*request/reply*), es asimétrico. <!---Principal diferencia con el anterior-->
 
 Usualmente el cliente y el servidor residen en distintas máquinas.
 
@@ -134,6 +137,7 @@ Procesos que se comunican a través de mensajes.
 El documento de diseño arquitectónico debe especificar precisamente las vistas y las relaciones entre éstas.
 
 ### Organización del documento  
+<!-- No se evalúa -->
 ***
 1. [Contexto del sistema y la arquitectura](#contexto-del-sistema-y-la-arquitectura)
 2. [Descripción de las vistas de la arquitectura](#detalle-de-las-vistas)
@@ -145,57 +149,62 @@ El documento de diseño arquitectónico debe especificar precisamente las vistas
 3. [Documentación transversal a las vistas](#documentacion-transversal-a-las-vistas)
 ***
 #### Contexto del sistema y la arquitectura
-Un diagrama de contexto provee el contexto general.Establece:
+Un diagrama de contexto provee el contexto **general**. Establece:
 + el alcance del sistema
 + los actores principales
 + las fuentes y consumidores de datos.
 
 #### Detalle de las vistas
-Uno por cada uno de los distintos tipos de vistas que se eligieron representar.
+*Uno por cada uno de los distintos tipos de vistas* que se eligieron representar. Mientras más, mejor.
 1. **Presentación principal de la vista**: Descripción gráfica, como se presentó anteriormente. Algunas vistas podrían combinarse en un solo diagrama, no graficar el diagrama si no es fácil de comprender.
 2. **Catálogo de elementos**: Más información sobre los elementos que se muestran en la presentación principal. Por c/elemento describe su **propósito** y sus **interfaces** (tanto sintaxis como semántica).
-3. **Fundamento de la arquitectura**: Justificaciones de las decisiones. Podría proveer una discusión sobre las alternativas consideradas y descartadas.
-4. **Comportamiento**: Comportamiento real del sistema/componente en algunos escenarios. Útil para analizar propiedades.
+3. **Fundamento de la arquitectura**: Justificaciones de las decisiones. Podría proveer una discusión sobre las alternativas consideradas y descartadas. Para futuros desarrolladores. Decir explícitamente el porqué y el porqué no.
+4. **Comportamiento**: Comportamiento real del sistema/componente en algunos escenarios. Útil para analizar propiedades. Se especifica un poco el *cómo*.
 5. **Otra información**: Por ejemplo, decisiones dejadas intencionalmente para el futuro.
 
 #### Documentacion transversal a las vistas
 Describe cómo los elementos de las distintas vistas se relacionan entre sí.
 Justificación de las vistas elegidas + otro tipo de info  transversal.
 
-## 🎨 Arquitectura y diseño
+## Relación entre Arquitectura y Diseño
 + La arquitectura **es** un diseño: se encuentra en el dominio de la solución y no en el del problema.
 + Es un diseño de **muy alto nivel** que se enfoca en las componentes principales. La arquitectura no considera la estructura interna.
 + La arquitectura impone restricciones sobre elecciones que pueden realizarse en otras fases del diseño y en la implementación.
-+ Para que la arquitectura tenga sentido, ésta debe acompañar el diseño y el desarrollo del sistema.
++ Para que la arquitectura tenga sentido, ésta debe *acompañar el diseño y el desarrollo del sistema*.
 
 ## Evaluación de las arquitecturas
-La arquitectura tiene **impacto** sobre los **atributos no funcionales** como modificabilidad, desempeño, confiabilidad, portabilidad, etc. Por lo tanto se deben evaluar estas propiedades en la arquitectura propuesta.
+La arquitectura tiene **impacto** sobre los **atributos no funcionales** (como modificabilidad, desempeño, confiabilidad, portabilidad, etc). Por lo tanto se deben evaluar estas propiedades en la arquitectura propuesta.
 
 **Métodos para evaluar propiedades**:
 Técnicas formales: redes de colas, model checkers, lenguajes de especificación, ....
 Otra posibilidad: metodologías rigurosas. Como el método de análisis ATAM.
 
 ### Método de análisis ATAM
-*Architecture Tradeoff Analysis Method*
+*Architecture Trade off Analysis Method*  
 Analiza las propiedades y las concesiones entre ellas.
+<!--  Es muy conocido. -->
+
 #### Pasos principales
-1. Recolectar escenarios:
-	+ Los escenarios describen las interacciones del sistema.
-	+ Elegir los escenarios de interés para el análisis (escenarios críticos).
+<!-- SE EVALÚA, aprender de memoria -->
+1. **Recolectar escenarios**:
+	+ Los escenarios *describen las interacciones del sistema*.
+	+ Elegir los escenarios de interés para el análisis (escenarios *críticos*).
 	+ Incluir escenarios excepcionales solo si son importantes 
-2. Recolectar requerimientos y/o restricciones:
-	+ Definir lo que se espera del sistema en tales escenarios.
-	+ Deben especificar los niveles deseados para los atributos de interés (preferiblemente cuantificados).
-3. Describir las vistas arquitectónicas
+2. **Recolectar requerimientos y/o restricciones**:
+	+ Definir *lo que se espera del sistema* en tales escenarios.
+	+ Deben especificar los *niveles deseados* para los **atributos de interés** (preferiblemente cuantificados).
+3. **Describir las vistas arquitectónicas**
 	+ Las vistas del sistema que serán evaluadas son recolectadas.
 	+ Distintas vistas pueden ser necesarias para distintos análisis.
-4. Análisis específicos a cada atributo.
+4. **Análisis específicos a cada atributo**.
 	+ Se analizan las vistas bajo distintos escenarios separadamente para cada atributo de interés distinto; esto determina los niveles que la arquitectura puede proveer en cada atributo.
 	+ Se comparan esos niveles con los requeridos: Esto forma la base para la elección entre una arquitectura u otra o la modificación de la arquitectura propuesta.
 	+ Puede utilizarse cualquier técnica o modelado.
-5. Identificar puntos sensitivos y de compromisos
+5. **Identificar puntos sensitivos y de compromisos**
 	+ Análisis de sensibilidad: cuál es el impacto que tiene un elemento sobre un atributo de calidad. Los elementos de mayor impacto son los puntos de sensibilidad.
 	+ Análisis de compromiso: Los puntos de compromiso son los elementos que son puntos de sensibilidad para varios atributos.
+
+<!-- TO DO: Ver ejemplo del Jalote-->
 
 ### ATAM vs. CBAM
 CBAM: *Cost-Benefit Analysis Method*
@@ -205,4 +214,6 @@ CBAM: *Cost-Benefit Analysis Method*
 | Desempeño      | Costo del desempeño        |
 | Escalabilidad  | Costo de la escalabilidad  |
 | Disponibilidad | Costo de la disponibilidad |
+
+Esta medida se está utilizando más ahora.
 

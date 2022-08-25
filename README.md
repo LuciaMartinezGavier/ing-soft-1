@@ -69,7 +69,7 @@ Springer, 2005
 + ✅️ Validación
 + ✅️ Métricas: Tamaño, Calidad
 
-### **Arquitectura del software** [[3-arqui-soft]]
+### **Arquitectura del software** [[3-arquitectura]]
 + ✅️ Rol de la arquitectura del software
 + ✅️ Vistas: Módulos, Componentes y conectores, Asignación de recursos
 + ✅️ Vista de Componentes y Conectores (C&C). Estilos arquitectónicos para C&C: Tubos y Filtros, Datos compartidos, Cliente-Servidor, Estratificados,
@@ -85,9 +85,9 @@ Springer, 2005
 + ⬜️ Administración del Riesgo: Conceptos, Evaluación, Control
 + ⬜️ Planeamiento del Seguimiento del proyecto: Mediciones, seguimiento observacional, registro del seguimiento.
 
-### **Diseño orientado a funciones**
-+ ⬜️ Niveles en el proceso de diseño
-+ ⬜️ Principios del diseño: Particionado y jerarquía, Abstracción, Modularidad. Estrategias top-down y bottom-up
+### **Diseño orientado a funciones** [[4-diseño]]
++  ✅️ Niveles en el proceso de diseño
++ ✅️ Principios del diseño: Particionado y jerarquía, Abstracción, Modularidad. Estrategias top-down y bottom-up
 + ⬜️ Acoplamiento y cohesión
 + ⬜️ Notación y especificación del diseño
 + ⬜️ Metodología de diseño estructurado: Cuatro pasos elementales, heurísticas de diseño, análisis de transacción.
@@ -95,7 +95,7 @@ Springer, 2005
 + ⬜️ Métricas: de red, de estabilidad y de flujo de información
 
 ### **Diseño orientado a objetos**
-+ ⬜️ Conceptos de orientaciópn a objetos: Clases, Objetos, Relación entre objetos, herencia, polimorfismo.
++ ⬜️ Conceptos de orientación a objetos: Clases, Objetos, Relación entre objetos, herencia, polimorfismo.
 + ⬜️ Conceptos de diseño: Acoplamiento, cohesión, principio abierto-cerrado, c UML
 + ⬜️ Una metodología de diseño: Modelado dinámico, modelado funcional, definición de clases y operaciones, Optimización.
 + ⬜️ Métricas
