@@ -70,12 +70,12 @@ Springer, 2005
 + ✅️ Métricas: Tamaño, Calidad
 
 ### **Arquitectura del software** [[3-arqui-soft]]
-+ ⬜️ Rol de la arquitectura del software
-+ ⬜️ Vistas: Módulos, Componentes y conectores, Asignación de recursos
-+ ⬜️ Vista de Componentes y Conectores (C&C). Estilos arquitectónicos para C&C: Tubos y Filtros, Datos compartidos, Cliente-Servidor, Estratificados,
-+ ⬜️ Documentación del diseño arquitectónico.
-+ ⬜️ Arquitectura en comparación con el diseño. Preservación de la integridad de una arquitectura.
-+ ⬜️ Evaluación de las arquitecturas (método de análisis ATAM)
++ ✅️ Rol de la arquitectura del software
++ ✅️ Vistas: Módulos, Componentes y conectores, Asignación de recursos
++ ✅️ Vista de Componentes y Conectores (C&C). Estilos arquitectónicos para C&C: Tubos y Filtros, Datos compartidos, Cliente-Servidor, Estratificados,
++ ✅️ Documentación del diseño arquitectónico.
++ ✅️ Arquitectura en comparación con el diseño. Preservación de la integridad de una arquitectura.
++ ✅️ Evaluación de las arquitecturas (método de análisis ATAM)
 
 ### **Planeamiento del proyecto de software**
 + ⬜️ Planeamiento del proceso
