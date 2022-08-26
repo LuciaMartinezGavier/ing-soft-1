@@ -1,7 +1,7 @@
 # 🔨 Arquitectura del software
 Ya se empieza a detallar el *cómo* se va a resolver el problema
 Es la primera de las tres etapas de **diseño** y la de más alto nivel:
-1. Arquitectura
+1. **Arquitectura**
 2. Diseño Alto Nivel
 3. Diseño Bajo Nivel
 
@@ -44,17 +44,17 @@ La mayoría de las vistas propuestas pertenece a alguno de estos tipos:
 
 Existen relaciones entre los elementos de una vista y los de otra; y tal relación puede ser muy compleja.
 
-### Vista de módulos
+### 📦 Vista de módulos
 Un sistema es una colección de **unidades de código** (no representan entidades en ejecución). Por ejemplo: clases, paquetes, funciones, procedimientos, métodos, etc.
 
 La **relación** entre ellos está **basada en el código**. Por ejemplo: "parte de", "usa a", "depende de", llamadas, generalización o especialización, etc.
 
-### Vista de Asignación de Recursos
+### 🍝 Vista de Asignación de Recursos
 Se enfoca en *cómo* las unidades de software se asignan a recursos como hardware, sistemas de archivos, personas, etc. 
 
 Exponen propiedades estructurales como qué proceso ejecuta en qué procesador, qué archivo reside dónde, etc.
 
-### Vista de Componentes y conectores
+### 🔌 Vista de Componentes y conectores
 Los elementos son **entidades de ejecución** denominados componentes. La vista C&C define las componentes y cómo se conectan entre ellas a través de conectores. Describe un estructura en ejecución del sistema: qué componentes existen y cómo interactúan entre ellos en **tiempo de ejecución**.
 
 #### Componentes
@@ -140,7 +140,7 @@ El documento de diseño arquitectónico debe especificar precisamente las vistas
 <!-- No se evalúa -->
 ***
 1. [Contexto del sistema y la arquitectura](#contexto-del-sistema-y-la-arquitectura)
-2. [Descripción de las vistas de la arquitectura](#detalle-de-las-vistas)
+2. [Descripción o detalle de las vistas](#detalle-de-las-vistas)
 	1. Presentación principal de la vista
 	2. Catálogo de elementos
 	3. Fundamento de la arquitectura
@@ -166,13 +166,13 @@ Un diagrama de contexto provee el contexto **general**. Establece:
 Describe cómo los elementos de las distintas vistas se relacionan entre sí.
 Justificación de las vistas elegidas + otro tipo de info  transversal.
 
-## Relación entre Arquitectura y Diseño
+## 🏡 Relación entre Arquitectura y Diseño
 + La arquitectura **es** un diseño: se encuentra en el dominio de la solución y no en el del problema.
 + Es un diseño de **muy alto nivel** que se enfoca en las componentes principales. La arquitectura no considera la estructura interna.
 + La arquitectura impone restricciones sobre elecciones que pueden realizarse en otras fases del diseño y en la implementación.
 + Para que la arquitectura tenga sentido, ésta debe *acompañar el diseño y el desarrollo del sistema*.
 
-## Evaluación de las arquitecturas
+## 📊 Evaluación de las arquitecturas
 La arquitectura tiene **impacto** sobre los **atributos no funcionales** (como modificabilidad, desempeño, confiabilidad, portabilidad, etc). Por lo tanto se deben evaluar estas propiedades en la arquitectura propuesta.
 
 **Métodos para evaluar propiedades**:
@@ -217,3 +217,5 @@ CBAM: *Cost-Benefit Analysis Method*
 
 Esta medida se está utilizando más ahora.
 
+***
+[[practico3]]
