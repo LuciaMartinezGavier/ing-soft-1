@@ -88,7 +88,7 @@ Springer, 2005
 ### **Diseño orientado a funciones** [[4-diseño]]
 +  ✅️ Niveles en el proceso de diseño
 + ✅️ Principios del diseño: Particionado y jerarquía, Abstracción, Modularidad. Estrategias top-down y bottom-up
-+ ⬜️ Acoplamiento y cohesión
++ ✅️ Acoplamiento y cohesión
 + ⬜️ Notación y especificación del diseño
 + ⬜️ Metodología de diseño estructurado: Cuatro pasos elementales, heurísticas de diseño, análisis de transacción.
 + ⬜️ Verificación
@@ -128,4 +128,3 @@ Springer, 2005
 + ⬜️ Responsabilidad y ética profesional.
 
 ** Se toma SIEMPRE testing
-Clase de modelado [[2a-modelados]] 

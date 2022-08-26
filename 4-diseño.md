@@ -1,53 +1,59 @@
-# Diseño del software
-1. Requerimientos definidos  
-2. Antes de la implementación
-3. Es el lenguaje intermedio entre los requerimientos y el código.
+# ✏️ Diseño del software
++ Se realiza luego de que los requerimientos estén definidos y antes de la implementación.
++ Es el lenguaje intermedio entre los requerimientos y el código.
++ Se comienzan a hacer representaciones más concretas.
++ El resultado es un plano del sistema que **satisfaga los requerimientos** y que se utilizará para la implementación.
++ Determina las mayores características de un sistema.
++ Tiene un gran **impacto en testing** y **mantenimiento**.
 
 Lo ideal es que sea **simple** y **entendible**.
 
-Objetivo: crear un plano del sistema.
-Determina las mayores características de un sistema.
+## 👾 Niveles en el proceso
+1. Diseño arquitectónico:
++ Identifica las componentes necesarias del sistema, su comportamiento y relaciones.
+2. **Diseño de alto nivel**:
+	* Es la vista de los módulos del sistema.
+	* Cuáles son los módulos del sistema, qué deben hacer, y cómo se organizan/interconectan
+	* Opciones:
+		* [Orientado a funciones](#diseño-orientado-a-funciones)
+		* [Orientado a objetos](#diseño-orientado-a-objetos)
+3. Diseño detallado o diseño lógico:
+	+ Establece *cómo* se implementan las componentes de manera que satisfagan sus especificaciones.
+	+ Muy cercano al código: incluye detalles del procesamiento lógico (por ejemplo algoritmo) y de estructuras de datos.
 
-Tiene un gran **impacto en testing** y **mantenimiento**.
-
-##  Niveles en el proceso
-Diseño arquitectónico:
-+ Identidica las comonentes neccesarias del sistema, comportamiento y relaciones
-Diseño de alto nivel:
-* Vista de los módulos del sistema
-* Funciones o OO.
-
-Diseño detallado diseño lógico:
-Muy cercano al código
-
-## Criterios para Evaluar
+## 🦉 Criterios para Evaluar el Diseño
 <!-- SE EVALÚA -->
-1. **Corrección** 
-	+ ¿El diseño implementa todos los requerimientos?
-	+ ¿Es factible el diseño dada las restricciones?
+Los criterios son usualmente subjetivos y no cuantificables. :(  
+Principales criterios para evaluar:  
+1. **Corrección** 👍🏼
+	+ ¿El diseño implementa todos los *requerimientos*?
+	+ ¿Es *factible* el diseño dada las restricciones?
 
-2. **Eficiencia**
-	* Apropiado *uso de los recursos* del sistema.
+2. **Eficiencia** 🏃🏼‍♀️
+	* Apropiado *uso de los recursos* del sistema (principalemte CPU y memoria).
 
-3. **Simplicidad**
-	* Difícil de hacer, fácil de entender.
-	* Facilita el testing :D
-	* Facilita la modificación del código :D
-	* Es difícil cuantificar la "simplicidad". Agarrarse de conceptos como modificabilidad, y facilidad en testing.
+3. **Simplicidad**  🧘🏼‍♀
+	<!-- Las cosas simples son difíciles de hacer, fáciles de entender. -->
+	+ Facilita la *comprensión* del sistema.
+	* Facilita el testing, modificación de código, mantenimiento, descubrimiento y corrección de bugs. 🦄🌈
 
-## Principios de diseño
-"ayudas " o "guías" para crear diseños
-**Principios fundamentales**.
-1. Partes y jerarquía
-2. Abstracción
-3. Modularidad
+Eficiencia y simplicidad no son independientes => el diseñador debe encontrar un balance.
 
-### Particionar y definir jerarquía.
-+ Cada parte debe poder *solucionarse* separadamente
-+ <!--Completar-->
-+ La jerarquía => algo de abstracción pero no necesariamente se cumple abstracción => jerarquía.
+## 🐦 Principios de diseño
+No hay una serie de pasos que permitan derivar el diseño a partir de los requerimientos. Pero existen "ayudas" que son **principios fundamentales** que guían el proceso de diseño:
 
-### Abstracción
+### 🪆 Particionar y definir jerarquía.
+Consiste en dividir el problema en pequeñas partes, simplificando el diseño y facilitando el mantenimiento. Cada parte debe poder *solucionarse*  y *modificarse* independientemente. Aunque no son totalmente independientes: deben *comunicarse* para solucionar el problema mayor. 
+
+La comunicación agrega complejidad: A medida que la cantidad de componentes aumenta, el *costo del particionado* + la *complejidad de la comunicación* también aumenta. Hay que detener el particionado cuando el costo supera al beneficio.
+
+El particionado del problema determina una *jerarquía* de componentes en el diseño. Usualmente la jerarquía se forma a partir de la relación "es parte de".
+
+Relación con la abstracción: `Jerarquía => Abstracción` pero no necesariamente se cumple `Abstracción => Jerarquía`.
+
+%%ACÁ%%
+
+### 🎨 Abstracción
 + **Ocultar** detalles de lo que pasa en niveles más bajos.
 + No hace falta preocuparse por eso.
 + Describe el comportamiento externo.
@@ -59,7 +65,7 @@ Muy cercano al código
 	+ Orientación a objetos?
 	+ Ada, C++, Modula, Java
 
-### Modularidad
+### 📦 Modularidad
 + Un sistema se dice modular si consiste de componentes discretas. 
 + Se pueden implementar separadamente.
 + Mínimo impacto
@@ -67,13 +73,13 @@ Muy cercano al código
 + Mejora claridad de diseño
 + Reduce costos de testing
 
-### Estrategias top-down y bottom-up
+### ⤵️ Estrategias top-down y bottom-up⤴️ 
 Top-down_ el refinamiento de más general a más especifico. Hasta que pueda ser implementado directamente.
 Desventajas: se puede asumir que un módulo se pueda hacer pero al final no sea posible.
 
 Bottom up: se usa cuando hay mucho re-uso.
 
-# Diseño orientado a funciones
+# 🐜 Diseño orientado a funciones
 Un módulo es una **parte lógicamente** separable de un programa.
 Es una unidad **discreta** e **identificable**
 
@@ -143,3 +149,4 @@ No es intención de los diagramas de estructura mostrar la lógica del programa.
 La implementación NO debe cambiar la estructura.
 
 
+# Diseño orientado a objetos
