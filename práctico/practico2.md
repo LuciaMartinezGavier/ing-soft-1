@@ -128,9 +128,11 @@ Actor primario: `usuario`
 Escenario exitoso principal: 
 `paso1: El usuario pasa por el lector su tarjeta de socio`
 `paso2: El sistema verifica que el socio no tiene préstamos vencidos, desbloquea el código antirrobo.`
-`paso3: el usuario pulsa un botón de finalización`
+`paso3: el usuario pulsa un botón de finalización y sale por la puerta`
+
 Escenarios excepcionales: 
 `si el socio tiene préstamos vencidos: se le deniega el préstamo`
+`si el usuario sale por la puerta con un libro tiene el código antirrobo activo: se bloquean las puertas en el momento en el que la persona intenta salir del edificio con el libro (Pulsando un botón de emergencia las puertas se desbloquean).
 ``
 <!-- Caso de uso: devolver un libro -->
 Caso de uso: `Un usuario devuelve un libro`
@@ -161,15 +163,8 @@ Escenario exitoso principal:
 `paso1: El socio introduce autor, título o  palabras clave`
 `paso2: El sistema devuelve todas las entradas que coincidan con la búsqueda`
 
-<!-- Duda: se deben incluir casos de uso que forman parte del sistema pero no del software? por ejemplo: persona entra y sale de la biblioteca, para poder hablar del sistema de seguridad -->
-<!--Caso de uso: obtener un préstamo -->
-Caso de uso: `Un usuario sale de la biblioteca con un libro`
-Actor primario: `usuario`
-Escenario exitoso principal: 
-`paso1: El usuario pasa por la puerta
-`paso2: El sistema verifica que el dispositivo de seguridad esté desactivado
-Escenarios excepcionales: 
-`si el libro tiene el código antirrobo activo: se bloquean las puertas en el momento en el que la persona intenta salir del edificio con el libro (Pulsando un botón de emergencia las puertas se desbloquean).
+<!-- Duda: se deben incluir casos de uso que forman parte del sistema pero no del software? por ejemplo: persona entra y sale de la biblioteca, para poder hablar del sistema de seguridad. No
+Mejor ver si se puede incluir en un caso de uso particular. -->
 
 ![](p2-ej8a.png)
 
@@ -212,11 +207,28 @@ Escenarios excepcionales:
 
 Caso de uso: `El cliente se termina su estadía`
 Actor primario: `cliente`
-Precondición: `el cliente tiene una reserva a su nombre` 
+Pre-condición: `el cliente tiene una reserva a su nombre` 
 Escenario exitoso principal: 
 `paso1: El  cliente solicita la terminación anticipada o llega la fecha de terminación de la reserva y especifica (o no) una opción de pago` 
 `paso2: El sistema pasa la reserva a la situación de terminada y genera una factura. Si el cliente no especifica una opcion de pago, el sistema automáticamente cobrará de la tarjeta de crédito.`
 
 
 ![](p2-ej8b.png)
+***
 
+El campus de una Universidad cuenta con un conjunto de aulas. 
+Cada aula tiene ciertos **equipamientos** disponibles, que pueden incluir **elementos** tales como micrófonos, sistema de audio, pizarras, proyector, televisión, conexión a internet, etc.. 
+
+Por su parte, cada uno de los equipos posee cierta información asociada, como *historial de uso*, *condición actual*, *forma en la que está disponible* (instalado en un aula e inamovible, o disponible para ser trasladado a distintas aulas);
+estos elementos también cuentan con información más específica, tal como *tamaño* para el caso de las **pizarras** y **televisores**, *inalámbricos* o no para el caso de los **micrófonos**, etc.. 
+
+Cada **aula** tiene una lista de **cursos**, planificados para llevarse a cabo en la misma, el *instructor* de cada uno de los cursos, el *equipamiento* a utilizarse en el curso, y la *persona encargada de configurar los equipos*, en los casos en los que hiciera falta. 
+
+Se desea desarrollar un sistema que **permita administrar la asignación de aulas y equipamiento**.
+
+El sistema debería, entre otras cosas,
+* permitir a los instructores y otros usuarios consultar los equipamientos disponibles en un aula,
+* requerir equipos y personal para su configuración,
+* y consultar sobre la disponibilidad de aulas con ciertas características.
+* El sistema debería informar al personal encargado de realizar las configuraciones de equipos y tareas asociadas sobre nuevos pedidos,
+* como así también permitir a este personal comunicar sobre actualizaciones en el estado de los equipos, estado de las configuraciones solicitadas, etc..

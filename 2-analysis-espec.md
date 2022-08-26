@@ -238,6 +238,8 @@ Identificar objetos y clases
 
 En estos pasos, puede haber "huecos" por ejemplo clases que todavía no se sabe cuales son los atributos.
 
+Clase de modelados: [2a-modelados](2a-modelados.md)
+
 ### Prototipado 
 <!-- TODO: estudiar del libro 3.2.4 -->
 Se construye un  sistema parcial prototípico.
