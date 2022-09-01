@@ -85,27 +85,29 @@ Springer, 2005
 + ⬜️ Administración del Riesgo: Conceptos, Evaluación, Control
 + ⬜️ Planeamiento del Seguimiento del proyecto: Mediciones, seguimiento observacional, registro del seguimiento.
 
-### **Diseño orientado a funciones** [[4-diseño]]
+### **Diseño orientado a funciones** [[4-diseño-alto-nivel]]
 +  ✅️ Niveles en el proceso de diseño
 + ✅️ Principios del diseño: Particionado y jerarquía, Abstracción, Modularidad. Estrategias top-down y bottom-up
 + ✅️ Acoplamiento y cohesión
-+ ⬜️ Notación y especificación del diseño
-+ ⬜️ Metodología de diseño estructurado: Cuatro pasos elementales, heurísticas de diseño, análisis de transacción.
-+ ⬜️ Verificación
-+ ⬜️ Métricas: de red, de estabilidad y de flujo de información
++ ✅️ Notación y especificación del diseño
++ ✅️ Metodología de diseño estructurado: Cuatro pasos elementales, heurísticas de diseño, análisis de transacción.
++ ✅️ Verificación
++ ✅️ Métricas: de red, de estabilidad y de flujo de información
 
 ### **Diseño orientado a objetos**
-+ ⬜️ Conceptos de orientación a objetos: Clases, Objetos, Relación entre objetos, herencia, polimorfismo.
-+ ⬜️ Conceptos de diseño: Acoplamiento, cohesión, principio abierto-cerrado, c UML
-+ ⬜️ Una metodología de diseño: Modelado dinámico, modelado funcional, definición de clases y operaciones, Optimización.
-+ ⬜️ Métricas
++ ✅️ Conceptos de orientación a objetos: Clases, Objetos, Relación entre objetos, herencia, polimorfismo.
++ ✅️ Conceptos de diseño: Acoplamiento, cohesión, principio abierto-cerrado, c UML
++ ✅️ Una metodología de diseño: Modelado dinámico, modelado funcional, definición de clases y operaciones, Optimización.
++ ✅️ Métricas
 
-### **Diseño detallado**
-+ ⬜️ Lenguaje de diseño de procesos (PDL). Diseño lógico (del algoritmo). Modelo de estado de clases (Autómatas de estado nito). Refinamiento en abstracciones de datos e invariantes de representación.
-+ ⬜️ Verificación: Recorrido del diseño, Revisión crítica (bajo proceso de inspección), verificación de consistencia y uso de técnicas formales
-+ ⬜️ Métricas. Complejidad Ciclomática, Vínculos de datos, Métricas de cohesión
+### **Diseño detallado** [[5-diseño-detallado]]
++ ✅️ Lenguaje de diseño de procesos (PDL). Diseño lógico (del algoritmo). Modelo de estado de clases (Autómatas de estado nito). Refinamiento en abstracciones de datos e invariantes de representación.
++ ✅️ Verificación: Recorrido del diseño, Revisión crítica (bajo proceso de inspección), verificación de consistencia y uso de técnicas formales
++ ✅️ Métricas. Complejidad Ciclomática, Vínculos de datos, Métricas de cohesión
 
-### **Codificación**
+<!-- Al parcial entra hasta el práctico 4-->
+
+### **Codificación** [[6-codificación]]
 + ⬜️ Principios y pautas para la programación: Errores comunes, Programación estructurada, ocultamiento de la información, prácticas de programación, estándares de codificación
 + ⬜️ Proceso de codificación: Incremental, Dirigido por test, Programación de a pares, Control del código fuente y construcción (build).
 + ⬜️ Refactorización: Conceptos básicos, Malos olores, refactorizaciones comunes,
