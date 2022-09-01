@@ -1,4 +1,3 @@
-# ✏️ Diseño del software
 + Se realiza luego de que los requerimientos estén definidos y antes de la implementación.
 + Es el lenguaje intermedio entre los requerimientos y el código.
 + Se comienzan a hacer representaciones más concretas.
@@ -11,6 +10,7 @@ Lo ideal es que sea **simple** y **entendible**.
 ## 👾 Niveles en el proceso
 1. Diseño arquitectónico:
 	+ Identifica las componentes necesarias del sistema, su comportamiento y relaciones.
+	+ Es más general que el diseño de alto nivel.
 1. **Diseño de alto nivel**:
 	* Es la vista de los módulos del sistema.
 	* Cuáles son los módulos del sistema, qué deben hacer, y cómo se organizan/interconectan
@@ -122,6 +122,7 @@ Los módulos deben estar tan *débilmente acoplados* como sea posible.
 En un sistema *no existe la independencia entre todos los módulos* pues deben cooperar entre sí. Pero queremos que la dependencia sea mínima.
 
 #### Factores que influyen en el acoplamiento
+<!--Tipos de acoplamiento: SE EVALÚA-->
 1. **Tipo de conexiones entre módulos**: La *complejidad* y *oscuridad* de las interfaces. Ejemplo: ¿Utilizo solo las interfaces especificadas o también uso datos compartidos?
 2. **Complejidad de las interfaces**: ¿Estoy pasando solo los parámetros necesarios? De todas maneras, cierto nivel de complejidad en las interfaces es necesario para soportar la comunicación requerida con el módulo.
 3. **Tipo de flujo de información entre módulos**: ¿Estoy pasando parámetros de control (flags)? si se pasan flags que determinan el un caso de la función, es probable que se pueda dividir en dos funciones. Transferencia de información de control permite que las acciones de los módulos dependan de la información; y hace que los módulos sean más difíciles de comprender. 
@@ -175,6 +176,7 @@ Los módulos funcionalmente cohesivos siempre pueden describirse con una **oraci
 Nos interesan el **diseño del sistema** (el producto de la fase) y  el **proceso** que lleva a cabo el diseño.
 
 ### Diagramas de estructura
+<!--Se evalúa teóricamente, no los usamos mucho en la práctica -->
 Presenta una notación gráfica para la *estructura de un programa*.
 Representa módulos y sus interconexiones. Se puede realizar una correlación entre código y diagramas de estructura.
 
@@ -194,9 +196,11 @@ La estructura se decide durante el diseño y la implementación NO debe cambiar 
 ### Pautas
 + Los módulos *subordinados* son los que realizan la mayoría de la computación. El procesamiento real se realiza en los módulos *atómicos* del nivel más bajo.
 + El módulo *principal* se encarga de la coordinación.
-+ La *factorización* es el proceso de descomponer un módulo de manera que el grueso de la computación se realice en módulos subordinados.
++ La *factorización* es el proceso de *descomponer* un módulo de manera que el grueso de la computación se realice en módulos subordinados.
 
 ### Pasos principales
+<!-- Se evalúa. Nombre, descripción. No prácticamente. -->
+<!-- LEER EN EL JALOTE-->
 1. [Reformular el problema como un DFD](#reformular-el-problema-como-un-DFD)
 2. [Identificar las entradas y salidas más abstractas](#identificar-las-entradas-y-salidas-abstractas)
 3. [Realizar el primer nivel de factorización](#factorizar1)
@@ -204,13 +208,189 @@ La estructura se decide durante el diseño y la implementación NO debe cambiar 
 5. [Mejorar la estructura (heurísticas, análisis de transacciones)](#mejorar-la-estructura)
 
 #### Reformular el problema como un DFD
+Se toma el *flujo de datos* de todo el sistema propuesto. Y se plantea un DFD, que proveerá una visión de alto nivel del sistema.
+
+Si bien *se ignoran aspectos procedurales* y la *notación es la misma*, el *propósito* del DFD es *diferente* al del de análisis de requerimientos. (No nos interesa entender el problema, sino empezar a desarrollar la solución).
+
 #### Identificar las entradas y salidas abstractas
+**MAI** (*Most Abstract Input*)
++ La *MAI* consiste en la *entrada* y todas las *transformaciones* que se le aplican a la misma para que esté en un *formato adecuado*.
++ Elementos de datos en el DFD que están más distantes de la entrada real, pero que aún puede considerarse como entrada.
++ Podrían tener poca semejanza con la entrada real.
+
+**MAO** (*Most Abstract Output*)
++ Es dual a la *MAI*.
++ Elementos de datos en el DFD que están más distantes de la salida real, pero que aún puede considerarse como salida.
+
+Determinar las *MAI* o las *MAO* es subjetivo, es decir, representan un juicio de valor.
+
+Las **transformaciones centrales** entre la *MAI* y la *MAO* es donde el sistema realmente "hace algo". Y estos se concentran en la transformación sin importar el formato/validación/etc de las entradas y salidas.
+
+Entonces, el primer diseño básico consiste en:
+
+| MAI     | → | Sistema intermedio | → | MAO    |
+| ------- | - | -------------------| - | ------ |
+| entrada | → | transformaciones   | → | salida |
+
 #### Factorizar1
+**Realizar el primer nivel de factorización**
+
+Hay que subdividir en:
+1. *Modulo principal*: Módulo coordinador
+2. *Módulos subordinados*
+	1. De entrada: responsables de entregar las entradas lógicas
+	2. Transformadores: consumen las entradas lógicas y obtienen las salidas lógicas
+	3. De salida: Consumen las salidas lógicas
+	+ Cada uno de los tres tipos de módulos pueden diseñarse separadamente y son independientes.
+
 #### Factorizar2
+**Factorizar los módulos de entrada**
++ El transformador que produce el dato de MAI se trata ahora como un transformador central.
++ Se repite el proceso del primer nivel de factorización considerando al módulo de entrada como si fuera el módulo principal.
++ Usualmente no debería haber módulos de salida.
+
+**Factorizar los módulos de salida**
++ Módulos subordinados: transformador y módulos de salida.
++ Usualmente no debería haber módulos de entrada.
+
+**Factorizar los transformadores centrales**
++ Utilizar un proceso de refinamiento top-down.
++ El objetivo es determinar los subtransformadores que compuestos conforman el transformador.
++ Graficar DFD.
++ Repetir hasta alcanzar los módulos atómicos.
+
 #### Mejorar la estructura
+**Mejorar la estructura (heurísticas, análisis de transacciones)**
+<!-- No está en el libro -->
+Esta etapa consiste en hacer las *modificaciones finales*. 
+Dada una serie de heurísticas se determina si la estructura está bien hecha. Y si no lo es, modificar.
+
+El objetivo es tener el menor grado de acoplamiento y tener mucha cohesión en los módulos.
+
+**Heurísticas** "Rules of thumb"
+1. *Tamaño del módulo*: Indicador de la complejidad del módulo. Examinar los módulos con muy pocas líneas o con más de 100 líneas.
+2. *Cantidad de flechas de salida y entrada*: La primera no debería exceder las 5 o 6 flechas; la segunda debería maximizarse.
+3. *Alcance del efecto de módulo*: Los módulos afectados por una decisión en este módulo (pueden ser más profundo que solo los inmediatos). 
+4. *Alcance del control de un módulo*: A dónde van las flechas. Todos los subordinados.
+
+Lo ideal es que `efecto == control`. Mientras menos se propaguen los problemas, mejor. Una decisión debe tener efecto solamente en los módulos subordinados.
 
 ## Verificación
+**Objetivo:** Asegurar que el diseño implemente los requerimientos (corrección). <!-- y completitud?--> Hacer análisis de desempeño, eficiencia, etc.
+
+Si se usan lenguajes formales para representar el diseño => existen *herramientas* que asisten para el análisis... Se usan también *listas de control*.
+
+La calidad del diseño se completa con una buena modularidad (*bajo acoplamiento y alta cohesión*).
 
 ## Métricas
+**Objetivo:** proveer una evaluación cuantitativa del diseño (así el producto final puede mejorarse).
 
-# Diseño orientado a objetos
+Se aplican dentro de UN MISMO proyecto y siempre se debe ser consistente.
+1. **Tamaño estimado:** `cantidad de módulos + tamaño estimado de c/u`
+2. **Complejidad de módulos:** cuáles son los que van a tomar más tiempo testear.
+3. **Métricas de red:** enfocado en la estructura del diagrama.
+	1. Se considera un buen diagrama aquel en el cual cada módulo tiene sólo un módulo invocador (reduce acoplamiento). 🌳
+	2. Impureza del grafo = `nodos_del_grafo - aristas_del_grafo - 1` si impureza = 0 tenemos un árbol. <!--Y todo es felicidad. -->
+4. **Métricas de estabilidad:** Trata de capturar el *impacto de los cambios* en el diseño. La estabilidad es la cantidad de suposiciones por otros módulos sobre uno específico.
+5. **Métricas de flujo de información:** Computar la complejidad inter-módulo que se estima con inflow y outflow (el flujo de info que entra o sale del módulo).
+	1. `DC = tamaño * (inflow * outflow)²` <!-- El ( )² representa la importancia de la interconexión respecto a la complejidad interna --> 
+	2. Propenso a error si `DC > complejidad_media + desviación_estándar`
+	3. Complejo si `complejidad_media < DC < complejidad_media + desviación_estándar.`
+
+# 🦆 Diseño orientado a objetos
+
+## Análisis OO y Diseño OO
+Análisis OO: Primer paso (previo a la SRS).
+Existe métodos que combinan análisis y diseño (ADOO)
+Análisis: entender el sistema. Muy global.
+Diseño: Maquetear una solución.
+
+## Conceptos de la Orientación a Objetos
+### Clases y objetos
+**Encapsulamiento** de datos e información u provee interfaces para accederlos y modificarlos.
+**Estado persistente** tracking del estado.
+
+Clase: define estructura y servicios. Tiene interfaz, cuerpo y variables. Las operaciones pueden ser públicas, privadas y protegidas.
+
+### Relaciones entre objetos
+**Asociación** solicitar un servicio
+**Agregación** uno es parte de otro
+**Composición** uno no existe sin la presencia del otro.
+
+![Relaciones_entre_objetos](relaciones_entre_objetos.png)
+
+### Herencia y polimorfismo
+Único en OO
+**herencia**: <!-- COMPLETAR --> Forma una jerarquía entre clases.
+Herencia múltiple: puede generar conflictos. El polimorfismo es incluso más complejo. Mejor no usarlas a menos que sea muy necesario.
++ Herencia estricta: No se redefinen  métodos. Solo se agregan características para especializarla.
++ Herencia no estricta: Mala costumbre.
+<!--Duda: Interfaz es herencia estricta? -->
+`herencia => polimorfismo`
+**polimorfismo**: una hija Y de X es tanto de tipo X como de tipo Y.
+<!--Nota: optimización temprana es la raíz de todos los males -->
+
+## Conceptos de diseño
+### Acoplamiento
+<!-- SIEMPRE SE EVALÚA-->
+**Tipos de acoplamiento**
++ *Interacción:* no se puede eliminar del todo. es mejor si Se comunican a través de la menor cantidad de parámetros pasando menos info y nada de control
++ *Componentes:* Muy feo. Mejor Si las variables de la clase C en A son, o bien atributos o parámetros. 
++ *Herencia:* Dos clases están acopladas si una es subclase de otra. Lo malo es si se modifican la signatura de un método. O si cambia la pre y post condición (especificación).
+
+### Cohesión
+<!-- SIEMPRE SE EVALÚA-->
+**Tipos de cohesión**
++ *Método:* Porqué los elementos están juntos en el mismo método. Se debería poder escribir una oración simple de lo que hace un *método?*
++ *De clase:* Porqué distintos atributos y métodos están en la misma clase?
++ *De Herencia:* Porqué distintas clases están juntas en la misma jerarquía? Cohesión por reuso no esta tan bueno, si esta piola si es especificación-generalización.
+
+### Principio abierto-cerrado
+*"Las entidades de software deben ser abiertas para extenderlas y cerradas para modificarlas."*
+Habla de herencia. Evitar la herencia no estricta.
+Si se cumple el principio de Sustitución de Liskov se cumple el principio abierto-cerrado.
+
+**Principio de sustitución de Liskov**
+<!-- SIEMPRE SE EVALÚA. COMPLETAR -->
+Un programa que utiliza un objeto O con clase C debería permanecer inalterado si O se reemplaza por cualquier objeto de una subclase de C. En general `Liskov => abierto-cerrado`
+
+## Arquitectura del software
+Si se puede elegir entre fácil o entendible. Siempre elegir entendible. Ahorra tiempo después.
+
+## Metodología de diseño
+<!-- No se evalúa prácticamente. Estudiar teóricamente -->
+1. **Producir el diagrama de clases**
+	+ Básicamente el diagrama obtenido en el análisis.
+2. **Producir el modelo dinámico y usarlo**
+	+ Describe la interacción entre objetos. ¿Cuándo pasan las cosas?
+3. **Producir el modelo funcional y usarlo para definir operaciones de las clases** 
+	+ Define la transformación de los datos.
+4. **Identificar las clases internas y sus operaciones**
+5. **Optimizar y empaquetar**
+
+<!-- COMPLETAR para qué se usa c/uno + frase explicativa -->
+
+## Métricas
+Sirven para repensar el diseño o prestar más atención en testing.
+<!-- COMPLETAR: para qué sirven los números que se obtienen al final -->
+
+### Métodos pesados por clases (WMC)
+La complejidad de la clase depende de la **cantidad de métodos en la misma y su complejidad**
+`M1, ..., Mn` son métodos de `C`
+Sea C(Mi) la complejidad
+Luego WMC = Sumatoria de C(Mi)
+
+### Profundidad del árbol de herencia (DIT)
+mayor DIT => mayor probabilidad de errores
+
+### Acoplamiento entre clases (CBC)
+Cantidad de clases a las cuales esta clase está acoplada.
+
+### Respuesta para una clase (RFC)
+RFC captura el grado de conexión de los métodos de una clase con otras clases.
+
+### Cantidad de hijos (NOC)
+Cantidad de subclases inmediatas de C.
+`> NOC => >reuso`
+***
+Práctico: el último que entra al primer par
