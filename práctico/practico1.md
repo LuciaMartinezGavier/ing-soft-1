@@ -1,8 +1,8 @@
-1. ¿Qué es la ingeniería del software y cuáñ es su relación con la Ciencia de la
+1. ¿Qué es la ingeniería del software y cuál es su relación con la Ciencia de la
 Computación?
 
-La Ingeniería del software es el enfoque sistematico al desarrollo, operación y
-mantenimiento de softaware.
+La Ingeniería del software es el enfoque sistemático al desarrollo, operación y
+mantenimiento de software.
 
 Su relación con la Ciencia de la Computación es que es englobada por esta. Es 
 necesario producir código entendible y eficiente de buena calidad. Y la
@@ -25,17 +25,17 @@ implementación y el testing.
 En primer lugar usaría herramientas que sé que también son mantenidas y
 portables.
 
-Escribiría una buena documentación y haría el código lo más limpio, modularizado
+Escribiría una buena documentación y haría el código lo más limpio, modularizado.
 y entendible posible.
 
-Dejaría espacio para que las estructuras sean modificables y se pueda parametrizar
+Dejaría espacio para que las estructuras sean modificables y se pueda parametrizar.
 lo más posible.
 
 4. Liste algunos de los problemas que surgirán si los métodos que usted utiliza
 para desarrollar aplicaciones pequeñas son utilizados para desarrollar grandes
 aplicaciones.
 
-* Habría poca documentación: por lo tanto sería dificil que otras personas
+* Habría poca documentación: por lo tanto sería difícil que otras personas
   comprendan y mantengan el código.
 * Estaría poco testeado: Haría falta más unit testing.
 * La interfaz sería poco usable para usuarios inexpertos
@@ -63,10 +63,10 @@ Se puede medir la calidad de acuerdo a los siguientes parámetros:
 **Características generales**
 - Correctitud: se comporta según especificaciones
 - Confiabilidad: < 1 defecto / KLOC
-- Robustez: recuperacion de errores o entradas inesperadas.
+- Robustez: recuperación de errores o entradas inesperadas.
 - Rendimiento: eficiencia. Minimizar la cantidad de instrucciones por tarea.
 - Portabilidad: sin que se modifique
-- Interoperabilidad: mediante el uso de estándares. interaccion con otros sistemas.
+- Interoperabilidad: mediante el uso de estándares. interacción con otros sistemas.
 - Seguridad: No cualquiera pueda meterse
 
 **Propiedades del código**

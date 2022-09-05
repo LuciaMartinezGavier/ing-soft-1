@@ -6,9 +6,7 @@ Es la primera de las tres etapas de **diseño** y la de más alto nivel:
 3. Diseño Bajo Nivel
 
 Da una vision de las partes del sistema y de las relaciones entre ellos.
-La arquitectura permite que los cambios sean simples de hacer en sistemas grandes y complejos.
-
-La idea de la arquitectura es la idea de *information hiding* y *Encapsulación*.
+La arquitectura permite que los cambios sean simples de hacer en sistemas grandes y complejos. Permite *information hiding* y *encapsulación*.
 
 El objetivo de la arquitectura es identificar subsistemas y la forma que interactúan entre ellos.
 ***
@@ -133,6 +131,7 @@ Parecido al modelo de computación orientada a objetos.
 **Estilo de procesos que se comunican**
 Procesos que se comunican a través de mensajes.
 
+
 ## 📖 Documentación del diseño arquitectónico
 El documento de diseño arquitectónico debe especificar precisamente las vistas y las relaciones entre éstas.
 
@@ -209,13 +208,13 @@ Analiza las propiedades y las concesiones entre ellas.
 ### ATAM vs. CBAM
 CBAM: *Cost-Benefit Analysis Method*
 
-| ATAM           | CBAM                       |
+| ATAM           | CBAM\*                     |
 | -------------- | -------------------------- |
 | Desempeño      | Costo del desempeño        |
 | Escalabilidad  | Costo de la escalabilidad  |
 | Disponibilidad | Costo de la disponibilidad |
 
-Esta medida se está utilizando más ahora.
+\* Esta medida se está utilizando más ahora.
 
 ***
 [[practico3]]

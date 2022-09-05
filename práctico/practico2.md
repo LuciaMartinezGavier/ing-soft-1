@@ -222,7 +222,8 @@ Cada aula tiene ciertos **equipamientos** disponibles, que pueden incluir **elem
 Por su parte, cada uno de los equipos posee cierta información asociada, como *historial de uso*, *condición actual*, *forma en la que está disponible* (instalado en un aula e inamovible, o disponible para ser trasladado a distintas aulas);
 estos elementos también cuentan con información más específica, tal como *tamaño* para el caso de las **pizarras** y **televisores**, *inalámbricos* o no para el caso de los **micrófonos**, etc.. 
 
-Cada **aula** tiene una lista de **cursos**, planificados para llevarse a cabo en la misma, el *instructor* de cada uno de los cursos, el *equipamiento* a utilizarse en el curso, y la *persona encargada de configurar los equipos*, en los casos en los que hiciera falta. 
+Cada **aula** tiene una lista de **cursos**, planificados para llevarse a cabo en la misma, el *instructor* de cada uno d como así también permitir a este personal comunicar sobre actualizaciones en el estado de los equipos, estado de las configuraciones solicitadas, etc..
+e los cursos, el *equipamiento* a utilizarse en el curso, y la *persona encargada de configurar los equipos*, en los casos en los que hiciera falta. 
 
 Se desea desarrollar un sistema que **permita administrar la asignación de aulas y equipamiento**.
 
@@ -232,3 +233,59 @@ El sistema debería, entre otras cosas,
 * y consultar sobre la disponibilidad de aulas con ciertas características.
 * El sistema debería informar al personal encargado de realizar las configuraciones de equipos y tareas asociadas sobre nuevos pedidos,
 * como así también permitir a este personal comunicar sobre actualizaciones en el estado de los equipos, estado de las configuraciones solicitadas, etc..
+
+**Casos de uso**
+*Caso de uso:* Un usuario consulta los equipamientos disponibles en un aula
+*Actor primario:* Usuario
+*Escenario exitoso principal:*
++ El usuario consulta los equipamientos especificando el número de aula.
++ El sistema devuelve una lista de los equipos disponibles.
+*Escenarios excepcionales:*
++  El aula ingresada no existe: Se le informa al usuario que el número de aula no es correcto.
+
+*Caso de uso:* Un instructor consulta disponibilidad y requiere equipos.
+*Actor primario:* Instructor
+*Escenario exitoso principal:*
++ El instructor especifica los equipos que necesita y la fecha en que serán utilizados.
++ El sistema muestra las opciones disponibles de aulas que tengan los equipos inamovibles requeridos y opciones de equipos móviles.
++ El instructor comienza una solicitud, eligiendo los equipos deseados, y presiona *"solicitar equipos"*
++ El sistema pide el código de curso para iniciar la solicitud
++ El instructor ingresa el código de curso
++ El sistema asigna los equipos al aula. Y retorna al instructor los datos del aula y los equipos disponibles para la fecha indicada. 
++ El instructor finaliza la solicitud apretando *"aceptar"* .
++ El sistema notifica al encargado, le provee información de los equipos reservados para esa fecha en esa aula y el número de aula.
+*Escenarios excepcionales:*
++ El código de curso no existe: Se informa que el código no es correcto.
++ Hay algún equipo que no está disponible: El sistema devuelve un mensaje de error y propone solo la reserva de los equipos disponibles.
+
+*Caso de uso:* El personal de configuración de equipos comunica actualizaciones en el estado de los equipos.
+*Actor primario:* Persona encargada de la configuración de los equipos
+*Pre-condición:* El encargado debe estar loggeado.
+*Escenario exitoso principal:*
++ El encargado ingresa al sistema el ID del equipo.
++ El sistema retorna los datos del equipo y permite modificaciones.
++ El encargado actualiza el estado del equipo y presiona *aceptar*.
++ El sistema actualiza los datos y comunica si la actualización fue exitosa.
+
+(diagrama de clases en papel)
+***
+
+Se desea desarrollar un **buscaminas tradicional.**
+El buscaminas es un juego simple de un **jugador**, que consiste en, dada una **grilla** de 8 × 8 casillas cubiertas, 10 de las cuales alojan minas, despejar todas las casillas de la misma que no oculten una mina.
+Al ser descubierta una casilla, si la misma aloja una mina entonces se pierde el juego.
+En cambio, si la casilla no está ocupada por una mina, se muestra en la misma un número, correspondiente a la cantidad de minas circundantes a la casilla descubierta. 
+
+Al descubrir una casilla a la cual le corresponde el número cero, todas sus vecinas se descubren automáticamente.
+El juego debe producir configuraciones de la grilla aleatoriamente (con respecto a la ubicación de las minas).
+Además, debe llevar cuenta del tiempo que el jugador insume en cada instancia de juego; el objetivo de esto último es mantener un ranking con los mejores cinco tiempos obtenidos. Cuando el desempeño de un jugador le permite acceder al ranking (venciendo a al menos uno de los cinco que lo ocupan en ese momento), se le permite ingresar su nombre.
+
+(diagrama de clases en papel)
+
+%%
+Herramientas para hacer diagramas de clases
+[https://github.com/matiaslee/pony_orm](https://github.com/matiaslee/pony_orm)
+
+"código bonito" implica:
+* No más de 3 tabs
+* Funciones con no  más de 10-20 líneas
+%%

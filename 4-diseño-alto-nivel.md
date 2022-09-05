@@ -1,3 +1,4 @@
+# Diseño de alto nivel
 + Se realiza luego de que los requerimientos estén definidos y antes de la implementación.
 + Es el lenguaje intermedio entre los requerimientos y el código.
 + Se comienzan a hacer representaciones más concretas.
@@ -25,17 +26,17 @@ Lo ideal es que sea **simple** y **entendible**.
 <!-- SE EVALÚA -->
 Los criterios son usualmente subjetivos y no cuantificables. :(  
 Principales criterios para evaluar:  
-1. **Corrección** 👍🏼
+1. **Corrección**
 	+ ¿El diseño implementa todos los *requerimientos*?
 	+ ¿Es *factible* el diseño dada las restricciones?
 
-2. **Eficiencia** 🏃🏼‍♀️
-	* Apropiado *uso de los recursos* del sistema (principalemte CPU y memoria).
+2. **Eficiencia**
+	* Apropiado *uso de los recursos* del sistema (principalmente CPU y memoria).
 
-3. **Simplicidad**  🧘🏼‍♀
+3. **Simplicidad**
 	<!-- Las cosas simples son difíciles de hacer, fáciles de entender. -->
 	+ Facilita la *comprensión* del sistema.
-	* Facilita el testing, modificación de código, mantenimiento, descubrimiento y corrección de bugs. 🦄🌈
+	* Facilita el testing, modificación de código, mantenimiento, descubrimiento y corrección de bugs.
 
 Eficiencia y simplicidad no son independientes => el diseñador debe encontrar un balance.
 
@@ -169,8 +170,7 @@ Realizar el siguiente test:
 + Si el predicado **no contiene un único objeto específico** a continuación del verbo (como es el caso de “editar los datos”) => probablemente tenga cohesión *lógica*.
 + Palabras como **inicializar/limpiar/...** implican cohesión *temporal*.
 
-Los módulos funcionalmente cohesivos siempre pueden describirse con una **oración simple**.
-
+	Los módulos funcionalmente cohesivos siempre pueden describirse con una **oración simple**.
 
 ## Notación y especificación del diseño
 Nos interesan el **diseño del sistema** (el producto de la fase) y  el **proceso** que lleva a cabo el diseño.
@@ -201,11 +201,11 @@ La estructura se decide durante el diseño y la implementación NO debe cambiar 
 ### Pasos principales
 <!-- Se evalúa. Nombre, descripción. No prácticamente. -->
 <!-- LEER EN EL JALOTE-->
-1. [Reformular el problema como un DFD](#reformular-el-problema-como-un-DFD)
-2. [Identificar las entradas y salidas más abstractas](#identificar-las-entradas-y-salidas-abstractas)
-3. [Realizar el primer nivel de factorización](#factorizar1)
-4. [Factorizar los módulos de entrada, de salida, y transformadores](#factorizar2)
-5. [Mejorar la estructura (heurísticas, análisis de transacciones)](#mejorar-la-estructura)
+1. Reformular el problema como un DFD
+2. Identificar las entradas y salidas más abstractas
+3. Realizar el primer nivel de factorización
+4. Factorizar los módulos de entrada, de salida, y transformadores
+5. Mejorar la estructura (heurísticas, análisis de transacciones
 
 #### Reformular el problema como un DFD
 Se toma el *flujo de datos* de todo el sistema propuesto. Y se plantea un DFD, que proveerá una visión de alto nivel del sistema.
@@ -232,8 +232,7 @@ Entonces, el primer diseño básico consiste en:
 | ------- | - | -------------------| - | ------ |
 | entrada | → | transformaciones   | → | salida |
 
-#### Factorizar1
-**Realizar el primer nivel de factorización**
+#### Realizar el primer nivel de factorización
 
 Hay que subdividir en:
 1. *Modulo principal*: Módulo coordinador
@@ -243,8 +242,7 @@ Hay que subdividir en:
 	3. De salida: Consumen las salidas lógicas
 	+ Cada uno de los tres tipos de módulos pueden diseñarse separadamente y son independientes.
 
-#### Factorizar2
-**Factorizar los módulos de entrada**
+#### Factorizar los módulos de entrada
 + El transformador que produce el dato de MAI se trata ahora como un transformador central.
 + Se repite el proceso del primer nivel de factorización considerando al módulo de entrada como si fuera el módulo principal.
 + Usualmente no debería haber módulos de salida.
@@ -255,7 +253,7 @@ Hay que subdividir en:
 
 **Factorizar los transformadores centrales**
 + Utilizar un proceso de refinamiento top-down.
-+ El objetivo es determinar los subtransformadores que compuestos conforman el transformador.
++ El objetivo es determinar los sub-transformadores que compuestos conforman el transformador.
 + Graficar DFD.
 + Repetir hasta alcanzar los módulos atómicos.
 
@@ -289,108 +287,204 @@ Se aplican dentro de UN MISMO proyecto y siempre se debe ser consistente.
 1. **Tamaño estimado:** `cantidad de módulos + tamaño estimado de c/u`
 2. **Complejidad de módulos:** cuáles son los que van a tomar más tiempo testear.
 3. **Métricas de red:** enfocado en la estructura del diagrama.
-	1. Se considera un buen diagrama aquel en el cual cada módulo tiene sólo un módulo invocador (reduce acoplamiento). 🌳
+	1. Se considera un buen diagrama aquel en el cual cada módulo tiene sólo un módulo invocador (reduce acoplamiento). 
 	2. Impureza del grafo = `nodos_del_grafo - aristas_del_grafo - 1` si impureza = 0 tenemos un árbol. <!--Y todo es felicidad. -->
 4. **Métricas de estabilidad:** Trata de capturar el *impacto de los cambios* en el diseño. La estabilidad es la cantidad de suposiciones por otros módulos sobre uno específico.
 5. **Métricas de flujo de información:** Computar la complejidad inter-módulo que se estima con inflow y outflow (el flujo de info que entra o sale del módulo).
-	1. `DC = tamaño * (inflow * outflow)²` <!-- El ( )² representa la importancia de la interconexión respecto a la complejidad interna --> 
-	2. Propenso a error si `DC > complejidad_media + desviación_estándar`
-	3. Complejo si `complejidad_media < DC < complejidad_media + desviación_estándar.`
+	+  `DC = tamaño * (inflow * outflow)²` <!-- El ( )² representa la importancia de la interconexión respecto a la complejidad interna --> 
+	+ `DC = fan_in * fan_out + inflow * outflow` Donde fan_in representa la cantidad de módulos que llaman a C y fan_out los llamados por C.
+	+ Propenso a error si `DC > complejidad_media + desviación_estándar`
+	+ Complejo si `complejidad_media < DC < complejidad_media + desviación_estándar.`
 
 # 🦆 Diseño orientado a objetos
+El propósito del diseño OO es el de definir las clases del sistema a construir y las relaciones entre éstas.
 
 ## Análisis OO y Diseño OO
 Análisis OO: Primer paso (previo a la SRS).
 Existe métodos que combinan análisis y diseño (ADOO)
-Análisis: entender el sistema. Muy global.
-Diseño: Maquetear una solución.
+
+| Análisis | Diseño |
+| --- | --- | 
+| Dominio del problema | Dominio de la solución |
+| El objetivo es entender el sistema | El objetivo es modelar una solución |
+| Los objetos representan un concepto del problemas. Son objetos semámticos | \* Produce objetos semánticos, de interfaces, de aplicaciones y de utilidad |
+| | Hace incapié en el comportamiento **dinámico** del sistema |
+\* 
++ Objetos de interfaces: se encargan de la interfaz con el usuario
++ Objetos de aplicaciones: Especifican los mecanismos de control para la solución propuesta.
++ Objetos de utilidad: Son los necesarios para soportar los servicios se los objetos semánticos (ejemplo: pilas, árboles, diccionarios, etc).
 
 ## Conceptos de la Orientación a Objetos
-### Clases y objetos
-**Encapsulamiento** de datos e información u provee interfaces para accederlos y modificarlos.
-**Estado persistente** tracking del estado.
+### Clases
+Es una "plantilla". Las clases definen un tipo, los objetos son sus instancias.
 
-Clase: define estructura y servicios. Tiene interfaz, cuerpo y variables. Las operaciones pueden ser públicas, privadas y protegidas.
+Una clase tiene interfaz, cuerpo y variables:
+
+| Componente | Descripción |
+| ---------- | ----------- |
+| Interfaz | Cuáles partes de un objeto puede accederse desde el exterior |
+| Cuerpo | Implementa las operaciones |
+| Variables de instancia | Sirven para retener el estado del objeto |
+
+ Las operaciones pueden ser:
+ + **públicas:** accesibles del exterior
+ + **privadas:** accesibles sólo dentro de la clase. 
+ + **protegidas:** accesibles desde dentro de la clase y desde sus subclases.
+
+### Objetos
+La propiedad básica de los objetos es el **encapsulamiento**. Los objetos encapsulan datos e información y proveen interfaces para accederlos y modificarlos. El encapsulamiento brinda abstracción y ocultamiento de información.
+
+Los objetos, a diferencia de las funciones, tienen
++ **estado persistente** tracking del estado.
++ **identidad:** cada objeto puede ser identificado y tratado como una entidad.
+
+El comportamiento del objeto queda definido conjuntamente por los servicios y el estado.
 
 ### Relaciones entre objetos
-**Asociación** solicitar un servicio
-**Agregación** uno es parte de otro
-**Composición** uno no existe sin la presencia del otro.
+| **Asociación** | **Agregación** | **Composición** |
+| ---------- | ---------- | ----------- |
+| Un objeto está vinculado durante un tiempo con otro | Un objeto es parte de otra clase | Un objeto está compuesto por otros, no existe sin la presencia ellos.| 
+| Se envían mensajes o se solicitan servicios | Relación derivada de una asociación, en general es una colección. Sus ciclos de vida no están relacionados (relación unidireccional) | El ciclo de vida de ambos objetos están muy relacionados. |
 
-![Relaciones_entre_objetos](relaciones_entre_objetos.png)
+![Relaciones_entre_objetos](https://imgur.com/q8MwyNI.png)
 
-### Herencia y polimorfismo
-Único en OO
-**herencia**: <!-- COMPLETAR --> Forma una jerarquía entre clases.
-Herencia múltiple: puede generar conflictos. El polimorfismo es incluso más complejo. Mejor no usarlas a menos que sea muy necesario.
-+ Herencia estricta: No se redefinen  métodos. Solo se agregan características para especializarla.
-+ Herencia no estricta: Mala costumbre.
-<!--Duda: Interfaz es herencia estricta? -->
-`herencia => polimorfismo`
-**polimorfismo**: una hija Y de X es tanto de tipo X como de tipo Y.
-<!--Nota: optimización temprana es la raíz de todos los males -->
+### Herencia
+La **herencia** es una relación entre clases que permite la definición e implementación de una clase basada en la definición de una clase existente.
+
+Si una clase *Y* hereda de una clase *X*, *Y* toma implícitamente todos los atributos y operaciones de *X*.
++ *X*: superclase o clase base
++ *Y*: subclase o clase derivada. Tiene una parte derivada (heredada de *X*) y una parte incremental (nueva).
+
+**Herencia múltiple:** puede generar conflictos. El polimorfismo es incluso más complejo. Mejor no usarlas a menos que sea MUY necesario.
+
++ **Herencia estricta:** No se redefinen  métodos. Solo se agregan características para especializarla. (Es suficiente con mantener el invariante de clase y las pre/post condiciones en las interfaces).
++ **Herencia no estricta:** Se reescriben métodos. Es mala costumbre.
+
+Forma una jerarquía entre clases; y crea una relación "es un" (un objeto de una subclase es un objeto de la superclase).
+
+`herencia => polimorfismo` pues un objeto puede ser de distintos tipos (pertenecer a distintas clases).
+
+### Polimorfismo
+Hay **polimorfismo** si un objeto de tipo *Y* es también un objeto de tipo *X* (si *Y*  es subclase de *X*). 
+
+El polimorfismo produce **vinculación dinámica** de operaciones (*dynamic binding*), es decir, el código asociado con una operación se conoce sólo durante la ejecución.
 
 ## Conceptos de diseño
+El diseño se puede evaluar usando:
++ **Acoplamiento**
++ **Cohesión**
++ **Principio abierto-cerrado**
+
 ### Acoplamiento
 <!-- SIEMPRE SE EVALÚA-->
-**Tipos de acoplamiento**
-+ *Interacción:* no se puede eliminar del todo. es mejor si Se comunican a través de la menor cantidad de parámetros pasando menos info y nada de control
-+ *Componentes:* Muy feo. Mejor Si las variables de la clase C en A son, o bien atributos o parámetros. 
-+ *Herencia:* Dos clases están acopladas si una es subclase de otra. Lo malo es si se modifican la signatura de un método. O si cambia la pre y post condición (especificación).
+#### Tipos de acoplamiento  
+ **Interacción:** 
++ Métodos de una clase *invocan* a métodos de otra clase.
++ No se puede eliminar del todo. 
++ *Menor acoplamiento*: si se comunican a través de la menor cantidad de parámetros pasando menos información y nada de control.
++ *Mayor acoplamiento*: Los métodos acceden a partes internas de otros métodos o variables. O la información se pasa a través de variables temporales.
+
+**Componentes:**
+<!-- Muy feo. Desde afuera no se ve que están relacionadas. -->
++ Una clase *A* tiene variables de otra clase *C*. Si *A* tiene variables de instancia, parámetros o métodos con variables locales de tipo *C*.
++ Cuando *A* está acoplada con *C*, también está acoplada con todas sus subclase.
++ Mejor Si las variables de la clase C en A son, o bien atributos o parámetros en un método. Es decir, son *visibles*. 
+
+**Herencia:** 
++ Si una es subclase de otra.
++ Lo malo es si se modifican la *signatura* de un método o *eliminan* un método (herencia no estricta). O si cambia la pre y post condición (*especificación*).
++ Menor acoplamiento si la subclase solo agrega variables de instancia y métodos pero no modifica los existentes en la superclase.
 
 ### Cohesión
 <!-- SIEMPRE SE EVALÚA-->
-**Tipos de cohesión**
-+ *Método:* Porqué los elementos están juntos en el mismo método. Se debería poder escribir una oración simple de lo que hace un *método?*
-+ *De clase:* Porqué distintos atributos y métodos están en la misma clase?
-+ *De Herencia:* Porqué distintas clases están juntas en la misma jerarquía? Cohesión por reuso no esta tan bueno, si esta piola si es especificación-generalización.
+#### Tipos de cohesión
+**Cohesión de método**
++ Es mayor si cada *método* implementa una *única función* claramente definida con todos sus elementos contribuyendo a implementar esta función.
++ Se debería poder escribir una oración simple de lo que hace un método.
+**Cohesión de clase** 
++ Es mayor si una *clase* representa un *único concepto* con todos sus elementos contribuyendo a este concepto.
++ Se pueden detectar múltiples conceptos si los métodos se pueden separar en diversos grupos, cada grupo accediendo a distintos subconjuntos de atributos.
+
+**Cohesión de Herencia:**
++ Es mayor si la jerarquía se produce como consecuencia de la *generalización-especificación*.
++ Cohesión por reuso no esta tan bueno.
 
 ### Principio abierto-cerrado
 *"Las entidades de software deben ser abiertas para extenderlas y cerradas para modificarlas."*
-Habla de herencia. Evitar la herencia no estricta.
-Si se cumple el principio de Sustitución de Liskov se cumple el principio abierto-cerrado.
+
+El comportamiento puede extenderse para adaptar el sistema a nuevos requerimientos, pero el código existente no debería modificarse. Es decir, permitir *agregar* código pero no modificar el existente.
+
+Este principio se satisface si se usa apropiadamente la herencia y el polimorfismo.
+La herencia permite crear una nueva (sub)clase para extender el comportamiento sin modificar la clase original.
+
+Evitar la herencia no estricta.
+
+Si se cumple el principio de Sustitución de Liskov se cumple el principio abierto-cerrado:
 
 **Principio de sustitución de Liskov**
-<!-- SIEMPRE SE EVALÚA. COMPLETAR -->
-Un programa que utiliza un objeto O con clase C debería permanecer inalterado si O se reemplaza por cualquier objeto de una subclase de C. En general `Liskov => abierto-cerrado`
+<!-- SIEMPRE SE EVALÚA. -->
+Un programa que utiliza un objeto O con clase C debería permanecer inalterado si O se reemplaza por cualquier objeto de una subclase de C.
 
-## Arquitectura del software
-Si se puede elegir entre fácil o entendible. Siempre elegir entendible. Ahorra tiempo después.
+En general `Liskov => abierto-cerrado`.
 
 ## Metodología de diseño
+Pasos de la metodología OMT (*Object modeling technique*).
+El punto de partida es el modelo obtenido durante el análisis OO.
+El producto final debe ser un plano de la implementación (incluyendo algoritmos y optimización).
 <!-- No se evalúa prácticamente. Estudiar teóricamente -->
 1. **Producir el diagrama de clases**
-	+ Básicamente el diagrama obtenido en el análisis.
-2. **Producir el modelo dinámico y usarlo**
-	+ Describe la interacción entre objetos. ¿Cuándo pasan las cosas?
+	+ Básicamente el diagrama obtenido en el análisis. Explica qué pasa en el sistema. *Estructura estática*.
+2. **Producir el modelo dinámico y usarlo para definir operaciones de las clases.**
+	+ Describe la *interacción* entre objetos. *Estructura de control*.
+	+ Apunta a especificar cómo cambia el estado de los distintos objetos cuando ocurren un evento (solicitud de operación).
+	+ Los escenarios son la secuencia de eventos que ocurren en una ejecución particular del sistema; permiten identificar los eventos. Todos los escenarios juntos permiten caracterizar el comportamiento completo del sistema.
+	+ Para el diagrama de secuencia: empezar por escenarios iniciados por eventos externos → escenarios exitosos → escenarios excepcionales.
+	+ Una vez reconocidos los eventos de los objetos, se expande el diagrama de clases. En general, para cada evento en el diagrama de secuencia habrá una operación en el objeto sobre el cual el evento es invocado.
 3. **Producir el modelo funcional y usarlo para definir operaciones de las clases** 
-	+ Define la transformación de los datos.
+	+ Define la *transformación* de los datos. *Estructura de cómputo*.
+	+ Describe las operaciones que toman lugar en el sistema; y especifica cómo computar los valores de salida a partir de los valores de la entrada.
+	+ No considera los aspectos de control (usar DFD).
 4. **Identificar las clases internas y sus operaciones**
-5. **Optimizar y empaquetar**
-
-<!-- COMPLETAR para qué se usa c/uno + frase explicativa -->
+	+ Considera cuestiones de implementación.
+	+ Evaluar críticamente cada *clase* para ver si es necesaria en su forma actual.
+	+ Considerar luego las *implementaciones* de las operaciones de cada clase.
+6. **Optimizar y empaquetar**
+	+ Agregar asociaciones redundantes (optimizar el acceso a datos).
+	+ Guardar atributos derivados (evitar cálculos complejos repetidos y asegurar consistencia).
+	+ Usar tipos genéricos (permite reusabilidad de código).
+	+ Ajustar la herencia (considerar subir en la jerarquía operaciones comunes, considerar la generación de clases abstractas para mejorar la reusabilidad).
 
 ## Métricas
-Sirven para repensar el diseño o prestar más atención en testing.
-<!-- COMPLETAR: para qué sirven los números que se obtienen al final -->
+Sirven para repensar el diseño o identificar que componentes necesitarán más atención en testing.
 
 ### Métodos pesados por clases (WMC)
-La complejidad de la clase depende de la **cantidad de métodos en la misma y su complejidad**
-`M1, ..., Mn` son métodos de `C`
-Sea C(Mi) la complejidad
-Luego WMC = Sumatoria de C(Mi)
+La complejidad de la clase depende de la **cantidad de métodos en la misma y su complejidad**.
+`M1, ..., Mn` son métodos de `C` y `C(Mi)` su complejidad (ej.: la longitud estimada, complejidad de la interfaz, complejidad del flujo de datos, etc)
+![](https://imgur.com/Ohh49hR.png)
+Si WMC es alto, la clase es más propensa a errores.
 
 ### Profundidad del árbol de herencia (DIT)
-mayor DIT => mayor probabilidad de errores
+Una clase muy por debajo en la jerarquía de clases puede heredar muchos métodos y dificulta la predicción de su comportamiento.  
+`mayor DIT => mayor probabilidad de errores`
+
+### Cantidad de hijos (NOC)
+Cantidad de subclases inmediatas de *C*.
+`mayor NOC => mayor reuso`
+`mayor NOC => mayor influencia => mayor importancia en la corrección del diseño de esta clase`
 
 ### Acoplamiento entre clases (CBC)
-Cantidad de clases a las cuales esta clase está acoplada.
+Cantidad de clases a las cuales esta clase está acoplada. Dos clases están acopladas si los métodos de una usan métodos o atributos de la otra.
+
+`menor CBC => mayor independencia => más modificable`
+`mayor CBC => mayor probabilidad de error`
 
 ### Respuesta para una clase (RFC)
 RFC captura el grado de conexión de los métodos de una clase con otras clases.
+RFC de una clase C es la cantidad de métodos que pueden ser invocados como respuesta de un mensaje recibido por un objeto de la clase C.
 
-### Cantidad de hijos (NOC)
-Cantidad de subclases inmediatas de C.
-`> NOC => >reuso`
+Es probable que sea más difícil testear clases con RFC más alto.
+Muy significativo en la predicción de clases propensas a errores.
+
 ***
-Práctico: el último que entra al primer par
+Práctico: el último que entra al primer parcial
+<!--Nota: optimización temprana es la raíz de todos los males -->

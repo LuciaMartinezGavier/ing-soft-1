@@ -1,13 +1,11 @@
-# 🧐📝 Análisis y especificación de los Requisitos del Software
-
+ # 🧐📝 Análisis y especificación de los Requisitos del Software
++ **Entrada**: Las necesidades se encuentran en la cabeza de alguien (ideas abstractas)
++ **Salida** : Un detalle preciso de lo que será el sistema futuro: **SRS** (*System Requirements Specification*).
 ![](https://imgur.com/s8Hxlrg.png)
 
-👥 Identificar y especificar los requisitos (involucra **interacción con la gente** y no puede automatizarse).    
-👥 **Análisis**: Entender al cliente. Descubrir qué se pretende del producto. Ida y vuelta entre el analista y el cliente.  
-Un buen analista debe asesorar y convencer y que el cliente acepte en lo que uno es bueno.   
-
-+ **Entrada**: Las necesidades se encuentran en la cabeza de alguien (ideas abstractas)
-+ **Salida** : Un detalle preciso de lo que será el sistema futuro. **SRS-System Requirements Specification**.
++ Identificar y especificar los requisitos (involucra **interacción con la gente** y no puede automatizarse).    
++ **Análisis**: *Entender* al cliente. Descubrir qué se pretende del producto. Ida y vuelta entre el analista y el cliente.  
+Un buen analista debe asesorar y convencer y que el cliente acepte en lo que uno es bueno.
 
 ## 📜 SRS
 Debe dar una clara comprensión de lo que se espera de un determinado software.
@@ -16,11 +14,8 @@ La SRS es el medio para **reconciliar las diferencias** y **especificar las nece
 
 Hay abogados y escribanos involucrados. Es un **contrato** o acuerdo entre cliente/usuario y quién suministrará el software. No debe ser ambigua.
 
-**Es concisa y precisa**
-
 ## ✅ Requerimientos del software
 Hay que tenerlos en concreto para producir el software.
-
 ***
 **Requerimientos** (IEEE)
 1. Una condición o capacidad necesaria de un usuario para solucionar un problema o alcanzar sus objetivos.
@@ -29,21 +24,17 @@ Hay que tenerlos en concreto para producir el software.
 
 ### ¿Por qué la SRS es necesaria?
 
-**Una SRS establece el contrato entre el ciente y el proveedor respecto a lo que el software va a hacer.**  
-Cliente: No comprende el proceso de desarrollo de software. La SRS ayuda al usuario a comprender sus necesidades.   
-Desarrollador: No conoce el problema ni su área de aplicación.  
-- **Ayuda** al usuario a comprender sus necesidades
-
-**La SRS provee un referencia para la validación del producto final.**  
-(Determina el resultado correcto). Verificación: "el software satisface la SRS".
-
-**Una SRS de alta calidad es esencial para obtener un software de calidad.**   
-Los errores de requerimientos solo se manifiestan en el software final. Los defectos de requerimientos no son pocos, ejemplo: 45% de los errores en testing correspondían a errores de requerimientos (siendo el 25% del total de defectos encontrados en el proyecto).
-
-**Una buena SRS reduce los costos de desarrollo.**  
-Una buena SRS contribuye a minimizar cambios y errores.
-Los cambios de requerimientos pueden costar demasiado (hasta un 40%).
-En cada etapa es más caro el precio de encontrar y resolver un error de los requerimientos.
+1. **Una SRS establece el contrato entre el ciente y el proveedor respecto a lo que el software va a hacer.**  
+	+ El cliente no comprende el proceso de desarrollo de software. Y el desarrollador no conoce el problema ni su área de aplicación.
+	+ La SRS ayuda a comprender las necesidades del cliente (tanto para el cliente mismo como para el desarrollador).
+2. **La SRS provee un referencia para la validación del producto final.**  
+	+ (Determina el resultado correcto). Verificación: "el software satisface la SRS".
+3. **Una SRS de alta calidad es esencial para obtener un software de calidad.**   
+	+ Los errores de requerimientos solo se manifiestan en el software final. Los defectos de requerimientos no son pocos. Ejemplo: 45% de los errores en testing correspondían a errores de requerimientos (siendo el 25% del total de defectos encontrados en el proyecto).
+4. **Una buena SRS reduce los costos de desarrollo.**  
+	+ Contribuye a minimizar cambios y errores.
+	+ Los cambios de requerimientos pueden costar demasiado (hasta un 40%).
+	+ En cada etapa es más caro el precio de encontrar y resolver un error de los requerimientos.
 
 ### Proceso de requerimientos
  **Secuencia de pasos que se necesita realizar para convertir las necesidades del usuario en la SRS**
@@ -58,9 +49,10 @@ En cada etapa es más caro el precio de encontrar y resolver un error de los req
 3.  Validación.
 
 La transición del análisis a la especificación es complicada.
-1. La especificación se enfoca en el **comportamiento externo.**
-2. Objetivo del análisis: comprender la estructura del problema y su dominio (componentes, entrada, salida).
-3. Se recolecta **más  información (o distinta) de la necesaria** para la especificación.
++ Objetivo del análisis: comprender la estructura del problema y su dominio (componentes, entrada, salida).
++ La especificación se enfoca en el **comportamiento externo.**
++ Se recolecta **más  información (o distinta) de la necesaria** para la especificación.
+
 
 Los métodos de análisis son similares a los de diseño, pero con **objetivos y alcances distintos**.
 El análisis trata de entender. El diseño trata de resolver.
@@ -69,10 +61,10 @@ El análisis trata de entender. El diseño trata de resolver.
 **Objetivo**: Lograr una buena comprensión de las necesidades, requerimientos y restricciones del software.
 
 El análisis incluye:
-1. Entrevistas con el cliente y usuarios
-2. Lectura de manuales
-3. Estudio del sistema actual
-4. Ayudar al cliente/usuario a comprender las nuevas posibilidades <!--Importante-->
+1. Entrevistas con el cliente y usuarios.
+2. Lectura de manuales.
+3. Estudio del sistema actual.
+4. Ayudar al cliente/usuario a comprender las nuevas posibilidades. <!--Importante-->
 
 Es importante:
 + Obtener la información necesaria
@@ -87,7 +79,7 @@ Es importante:
  **Particionar el problema**
  **Estrategia**: Descomponer e problema en pequeñas partes, comprenderlas y relacionarlas entre ellas.
  
-Comprender los sub-problemas y la relación respecto a
+Comprender los sub-problemas y la relación respecto a:
 + Funciones (análisis estructural)
 + Objetos <!--palabras clave: abstracción, interfaz-->
 + Eventos del sistema
@@ -98,7 +90,7 @@ No se construye un modelo formal del sistema.
 La información recogida se plasma y organiza directamente en la SRS, la cual es el objeto de revisión con el cliente.
 
 ### Modelado de flujo de datos
-Ampliamente utilizado
+%%Ampliamente utilizado.%%
 Se enfoca en las funciones realizadas en el sistema.
 Para el modelado se usan **diagramas de flujos de datos** (DFD) y **descomposición funcional**.
 
@@ -119,7 +111,7 @@ Método de análisis estructurado.
 
 Usualmente se muestran sólo las entradas/salidas más significativas y se ignoran las de menor importancia (como los mensajes de error).  
 No debe decir **cómo** se realiza una transformación.  
-No hay loops ni razonamiento condicional. Un DFS **no** es un diagrama de control, no debería existir diseño ni pensamiento algorítmico. <!--Importante-->
+No hay loops ni razonamiento condicional. Un DFD **no** es un diagrama de control, no debería existir diseño ni pensamiento algorítmico. <!--Importante-->
 
 ##### Cómo dibujar el DFD de un sistema:
 1. Identificar entradas, salidas, fuentes, sumideros del sistema
@@ -131,10 +123,10 @@ No hay loops ni razonamiento condicional. Un DFS **no** es un diagrama de contro
 4. Intentar dibujar grafos de flujo de datos alternativos antes de definirse por uno.
 
 ##### DFD en niveles
-El DFD de un sistema puede resultar muy grande -> organizar jerárquicamente.  
+El DFD de un sistema puede resultar muy grande → organizar jerárquicamente.  
 Se realiza un proceso Top-Down:  
 + Comenzar con un DFD de nivel superior, abstracto, conteniendo pocas burbujas.
-+ Luego dibujar un DFD por cada burbuja. Preservando la E/S original para ser consitente.
++ Luego dibujar un DFD por cada burbuja. Preservando la E/S original para ser consistente.
 
 ##### Errores:
 + Consistencia no preservada
@@ -149,35 +141,33 @@ Muestra la estructura de los datos.
 El diccionario de datos se representa con las flechas del DFD que están etiquetadas con items de datos; y define con mayor precisión los datos en un DFD.
 Se puede usar expresiones regulares para identificar los datos.
 
-Ejemplos:
-
-```
+Ejemplo:
+```haskell
 weekly timesheet = Employee_name +
 				   Employee_Id +
 				   [Regular_hours + Overtime_hours] *
 
-pay.rate = [Hourly | daily | weekly] + Dollar_amount
+pay.rate = [hourly | daily | weekly] + Dollar_amount
 
 Employee_name = Last + First + Middle.initial
 
 Employee_Id = digit + digit + digit + digit
 ```
 
-
 #### Método de análisis estructurado
 1. Dibujar el [diagrama del contexto](#diagrama-de-contexto).
 2. Dibujar el [DFD del sistema existente](#dfd-del-sistema-existente): refinar el anterior. Es importante la comunicación con el cliente. 
-3. [Modelado del sistema propuesto](#modelado-del-sistema-propuesto). Dibujar el **DFD del sistema propuesto** e identificar la frontera hombre-máquina
+3. [Modelado del sistema propuesto](#modelado-del-sistema-propuesto). Dibujar el **DFD del sistema propuesto** e identificar la frontera hombre-máquina.
 
 ##### Diagrama de Contexto
-* Identifica el contexto
+* Identifica el contexto.
 * Es un DFD con un único transformador (el sistema), con entradas, salidas, fuentes y sumideros del sistema.
 
 ##### DFD del sistema existente
-* El **sistema actual** * se modela tal como es con un DFD con el fin de comprender el funcionamiento.
-* Se refina el diagrama de contexto
-* Pueden usarse DFD en niveles jerárquicos
-* Para obtenerlo se debe interactuar intensamente con el usuario
+* El **sistema actual**\* se modela tal como es con un DFD con el fin de comprender el funcionamiento.
+* Se refina el diagrama de contexto.
+* Pueden usarse DFD en niveles jerárquicos.
+* Para obtenerlo se debe interactuar intensamente con el usuario.
 * El DFD obtenido se valida junto a los usuarios.
 
 \* no es necesariamente de software. Es un sistema que queremos automatizar.
@@ -189,7 +179,6 @@ Employee_Id = digit + digit + digit + digit
 * Mostrar claramente la interacción entre los procesos manuales y los automáticos
 
 ##### Ejemplo
-
 Una dueña de restaurante, quiere automatizar algunas partes del negocio.
 Entrevistas y cuestionarios. Recolectamos información en general.
 
@@ -213,7 +202,7 @@ Un objeto **provee servicios** o **realiza operaciones**. Solo se accede a ellos
 | --- | --- |
 
 + **Diagrama de clase**: Representa gráficamente la estructura del problema.
-+ **Clase**: Conformada por: nombre, atributos y servicios o métodos
++ **Clase**: Conformada por: nombre, atributos y servicios o métodos.
 
 | clase |ejemplo |
 | --- |---|
@@ -221,7 +210,7 @@ Un objeto **provee servicios** o **realiza operaciones**. Solo se accede a ellos
 | atributos |Refrigration Needs|
 |métodos |Warnings|
 
-+ **Estructura de generalización-especialización**: utilizado para representar **herencia** de objetos. (líneas que unen con un triangulo)
++ **Estructura de generalización-especialización**: utilizado para representar **herencia** de objetos (líneas que unen con un triángulo).
 + **Multiplicidad de una relación** se representa con un círculo negro. Si hay dos puntitos negros es una relación N a N.
 + **Estructura de agregación**: modela la relación "está conformada por.." y se representa con un rombo.
 + **Asociación**: Representa una relación entre objetos de distintas clases (lineas). Asociación no es herencia. 
@@ -241,31 +230,50 @@ En estos pasos, puede haber "huecos" por ejemplo clases que todavía no se sabe 
 Clase de modelados: [2a-modelados](2a-modelados.md)
 
 ### Prototipado 
-<!-- TODO: estudiar del libro 3.2.4 -->
-Se construye un  sistema parcial prototípico.
-Ayuda a visualizar cómo será el sistema final.
+Un prototipo de software se puede definir como una **implementación parcial** de un sistema cuyo propósito es **aprender** algo del problema a resolver o del enfoque de la solución.
+El prototipado enfatiza que la experiencia práctica es la mejor ayuda para entender las necesidades.
+Se necesita una constante interacción con el cliente/usuario durante el prototipado para entender sus respuestas.
 
-#### Enfoques del prototipado
-**Descartable**: el prototipo se construye con la idea de desecharlo luego de culminada la fase de requerimientos
-**Evolucionario**: Se construye con la idea de que evolucionará al sistema final.
+**Enfoques:**
++ *Throwaway:* (Descartable) Se construye con la idea de que va a descartarse luego de que se complete el análisis.
++ *Evolutionary:* (Evolutivo) Se construye con la idea de que eventualmente se va a convertir en el sistema final.
 
-* El descartable es más adecuado porque igual es probable que se descarte
+Para el análisis y entendimiento el prototipado descartable es más adecuado.
+
+Los requerimientos se pueden dividir en tres grupos:
++ Los entendidos.
++ Parcialmente comprendidos: son los que deben ser incluidos en el prototipado.
+	+ Críticos en el diseño: En estos debería enfocarse el prototipo.
+	+ No críticos: Después pueden ser fácilmente incorporados en el sistema.
++ Desconocidos.
+
+![](https://imgur.com/zBqTHnJ.png)
+
+Si el conjunto de requerimientos es substancial (en particular si se trata de los requerimientos críticos), entonces debería construirse un prototipo descartable.
+
+**Tipos de prototipado:**  
++ *Vertical*: Una parte elegida del sistema, que no ha sido bien comprendida, se construye completamente.
++ *Horizontal*: El sistema es organizado como una serie de capas y alguna capa es el foco del prototipo.
+
+Para que sea posible hacer un prototipo en la etapa de análisis de requerimientos, el **costo** debe mantenerse **bajo**. Por eso solo se incluyen las características valiosas para la experiencia de usuario, solo se produce mínima documentación del desarrollo y se reduce el testing.  Además, la eficiencia no es una preocupación en el prototipado, y usualmente se usan lenguajes interpretados de alto nivel para hacer prototipos.
+
+Gracias al prototipado se pueden reducir substancialmente los errores de requerimientos y la cantidad de cambios de requerimientos.
 
 ## ✒️ Especificación de los requerimientos
 **¿Por qué los DFD, modelos DC, o prototipado no son SRS?**
 
 | Modelado | SRS |
 | ---------- | ----|
-| Se enfoca en la estructura del problema | Se enfoca en el comportamiento **externo** del sistema.|
-| Ej: UI no se modela | Ej: UI sí está en la SRS |
-| Solo está la estructura | Hay tratamiento de errores, requerimientos en el desempeño, conformidad de estándares recuperación, ... |
+| Se enfoca en la estructura del problema. | Se enfoca en el comportamiento **externo** del sistema.|
+| Ej: UI no se modela. | Ej: UI sí está en la SRS. |
+| Solo está la estructura. | Hay tratamiento de errores, requerimientos en el desempeño, conformidad de estándares recuperación, ... |
 
 + La transición del modelo a la SRS no es directa: la SRS NO es una formalización del modelo.
 + Lo que se transporta del análisis a la especificación es el **conocimiento adquirido** sobre el sistema.
 
 ### 🧮 Características de la SRS
 <!-- SE EVALÚA SIEMPRE-->
-##### ❣️ **Correcta**:
+##### ❣️ Correcta**:
 Cada requerimiento representa precisamente alguna característica deseada por el cliente en el sistema final. 
 `SRS -> representa -> cliente`
 
@@ -339,7 +347,7 @@ Especifican restricciones sobre la ejecución
 
 #### Requerimientos de Interfaces externas ✅
 * Todas las interacciones del software con gente, hardware, y otros software deben especificase claramente.
-* Estos requerimientos también deben ser precisos para asegurar verificabilidad (evitar cosas como "la interfaz debe ser amigable" 🥴)
+* Estos requerimientos también deben ser precisos para asegurar verificabilidad (evitar cosas como "la interfaz debe ser amigable").
 
 ### 💬 Lenguajes de especificación
 
@@ -488,8 +496,8 @@ La SRS se revisa por un grupo de personas, conformado por autor, **cliente**, re
 Se pueden detectar entre el 40% y el 80% de los errores de requerimientos.
 
  Son útiles las **listas de control**: aspectos que deberían haberse tenido en cuenta para ir chequeando.
+ 
 Ejemplo:  
-
 | | Checkear: |
 | --- | ---|
 |1 | ¿Se definieron todos los recursos de hardware? |
@@ -514,27 +522,17 @@ Se determina solo con la SRS.
 Define el tamaño en términos de la "funcionalidad".  
 Métrica en términos de LOC.  
 
-**Tipo de funciones**:
-1. Entradas externas: Tipo de entrada (dato/control) externa a la aplicación.
-2. Salidas externas: Tipo de salida que deja el sistema.
-3. Archivos lógicos internos: Grupo lógico de dato/control de información generado/usado/manipulado.
-4. Archivos de interfaz externa: Archivos pasados/compartidos entre aplicaciones.
-5. Transacciones externas: Input/output inmediatos (queries)
+##### Tipo de funciones:
+1. **Entradas externas:** Tipo de entrada (dato/control) externa a la aplicación.
+2. **Salidas externas:** Tipo de salida que deja el sistema.
+3. **Archivos lógicos internos:** Grupo lógico de dato/control de información generado/usado/manipulado.
+4. **Archivos de interfaz externa:** Archivos pasados/compartidos entre aplicaciones.
+5. **Transacciones externas:** Input/output inmediatos (queries)
 
 Contar cada tipo de función diferenciado según sea *compleja*, *promedio* o *simple*. Y se pondera con un número `w_ij`.
 
 `C_ij` determina la cantidad de funciones tipo "i" con complejidad "j"
-
-```c
-//punto función no ajustado
-// UFP = sum(i = 1, 5, sum(j = 1, 3, w_ij * C_ij))
-ufp = 0;
-for (int i = 1; i <= 5, i++){
-	for (int j = 1; j<=3; j++){
-		ufp += w_ij * C_ij;
-	}
-}
-```
+![](https://imgur.com/D2GY3JV.png)
 
 Ajustar el UFP de acuerdo a la **complejidad del entorno**. Se evalúa según las siguientes características:
 1. Comunicación de datos
@@ -560,15 +558,7 @@ Casa uno de estos items debe evaluarse como:
 5. Influencia significativa `p_i = 4`
 6. influencia fuerte: `p_i = 5
 
-```c
-// Factor de ajuste de complejidad CAF
-// CAF = 0.65 + 0.01 * sum(i=1, 14, pi)
-float comp_entorno = 0.0;
-for (int i = 1; i <= 14; i++){
-	comp_entorno += p[i];
-}
-caf = 0.65 + 0.01 * comp_entorno;
-```
+![](https://imgur.com/5rxBFjU.png)
 
 ```c
 puntos_función = CAF * UFP;
