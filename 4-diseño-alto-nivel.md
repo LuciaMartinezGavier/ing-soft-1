@@ -486,5 +486,5 @@ Es probable que sea más difícil testear clases con RFC más alto.
 Muy significativo en la predicción de clases propensas a errores.
 
 ***
-Práctico: el último que entra al primer parcial
+Práctico: el último que entra al primer parcial [[practico4]] 
 <!--Nota: optimización temprana es la raíz de todos los males -->

@@ -29,7 +29,7 @@ Proyecto personal 2 semanas
 * Quizás no hay.
 
 ### Proyectos
-* Proyecto 1: Take home personal
+* Proyecto 1: Take home personal [[entrega]]  
     * Se *debe* hablar con los profes y preguntar.
     * Se entregan a Laura y se defienden personalmente
     * 2 semanas (4 clases + Zulip)
@@ -130,3 +130,8 @@ Springer, 2005
 + [ ] Responsabilidad y ética profesional.
 
 ** Se toma SIEMPRE testing
+
+[[Ingenieria/ing-soft-1/SCRUM]]
+Aunque son los equipos de desarrollo de software los que utilizan con mayor frecuencia este tipo de scrum, sus principios y lecciones se pueden aplicar a todo tipo de trabajo en equipo. Esta es una de las razones por las que es tan popular. Aunque se considera a menudo un marco de gestión de proyectos ágil, scrum incluye un conjunto de reuniones, herramientas y funciones que, de forma coordinada, ayudan a los equipos a estructurar y gestionar su trabajo.
+
+En este artículo, a
