@@ -29,7 +29,7 @@ Proyecto personal 2 semanas
 * Quizás no hay.
 
 ### Proyectos
-* Proyecto 1: Take home personal [[entrega]]  
+* Proyecto 1: Take home personal [[enunciado]]  
     * Se *debe* hablar con los profes y preguntar.
     * Se entregan a Laura y se defienden personalmente
     * 2 semanas (4 clases + Zulip)
