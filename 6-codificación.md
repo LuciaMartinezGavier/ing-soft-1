@@ -29,10 +29,10 @@ Que el código...
 ### Programación estructurada
 En contra del uso indiscriminado de **constructores de control** como los "`goto`".
 
-El objetivo es escribir programas cuya estructura dinámica es la misma que la estática para que sea fácil razonar sobre los programas.
+El objetivo es escribir programas cuya estructura dinámica es la misma que la estática para que sea fácil razonar sobre los programas. (O lo más parecido posible).
 
 + **Estructura estática:** orden de las sentencias en el código (lineal).
-+**Estructura dinámica:** orden en el cual las sentencias se ejecutan.
++ **Estructura dinámica:** orden en el cual las sentencias se ejecutan.
 
 Para mostrar que un programa es **correcto** debemos mostrar que el **comportamiento dinámico** es el esperado. Esto es más simple si la estructura dinámica y la estática son similares.
 
@@ -72,6 +72,7 @@ La **legibilidad del código** aumenta si todos siguen ciertas **convenciones** 
 Cierta dependencia de lenguaje/empresa/comunidad...
 
 #### Java
+%% NO SE EVALÚA, solo en el th y proyecto %%
 ##### Nombres
 
 | Nombre de |Convención |
@@ -114,12 +115,19 @@ Comienza ni bien está disponible la especificación del diseño de los módulos
 3. Si error: arreglar bugs y repetir tests.
 <!-- Esto está MUY incompleto. Falta la parte de incremental: Describir el gráfico-->
 
-![](https://imgur.com/xHadN3y.png)
+| | |
+|-|-|
+| ![](https://imgur.com/xHadN3y.png) | Proceso de codificación incremental. |
 
 ### Desarrollo dirigido por test TDD
 TDD: *Test Driven Development*
 
-![](https://imgur.com/U01FbwA.png)
+| | |
+|-|-|
+| ![](https://imgur.com/U01FbwA.png) | Proceso de codificación dirigido por test. |
+
+Test != sript de test
+* Se escriben scripts de test no tests porque estos últimos son solo una tupla.
 
 | Ventajas | Desventajas |
 |-|-|
@@ -139,6 +147,7 @@ Una tipea otra señala errores. Los roles se alteran periódicamente.
 La efectividad no está demostrada.
 
 ### Control de código fuente y construcción 
+%%No se evalúa %%
 Se usan herramientas como `Git` (repositorio: estructura de directorio controlada y fuente oficial para todos los archivos del código).
 
 ## Refactorización
@@ -150,9 +159,9 @@ No debería cambiar la funcionalidad del código. El objetivo NO es corregir bug
 La refactorización se realiza durante **codificación** y generalmente está asociada a un **requerimiento de cambio**. Los cambios por refactorización se realizan separadamente de la codificación normal.
 
 La refactorización intenta:
-+ Reducir acoplamiento 
-+ Incrementar cohesión
-+ Mejorar la respuesta al principio abierto-cerrado
++ Reducir acoplamiento. 
++ Incrementar cohesión.
++ Mejorar la respuesta al principio abierto-cerrado.
 
 ### ¿Por qué es necesaria?
 Siempre es necesaria porque el código se modifica con el fin de aumentar su funcionalidad, con el tiempo, aún si el diseño inicial era bueno, los cambios en el código deterioran el diseño. Al complicarse el diseño, comienza a hacerse más complicado modificar el código y más susceptible a errores.  
@@ -160,7 +169,7 @@ Siempre es necesaria porque el código se modifica con el fin de aumentar su fun
 La refactorización permite que el diseño del código mejore continuamente en lugar de degradarse con el tiempo. 
 + El código extra de la refactorización se recupera en la reducción del costo en los cambios.
 + No es necesario tener el diseño más general desde el comienzo; se pueden elegir diseños más simples. 
-+ Hace más fácil y menos riesgosa la tarea inicial de diseño
++ Hace más fácil y menos riesgosa la tarea inicial de diseño.
 
 ###  ¿Cómo refactorizar?
 Para disminuir la posibilidad de "romper" la funcionalidad existente,
@@ -179,6 +188,8 @@ Si se detecta alguno de los siguientes signos en el código, es posible la neces
 8. **Encadenamiento de mensajes:** un método llama a otro que llama a otro...; posible acoplamiento innecesario.
 
 ### Refactorizaciones más comunes
+%% Se toma, va junto con la definición%%
+
 #### Mejoras de métodos:
 ##### Extracción de métodos
 + Se realiza si el método es demasiado largo.
