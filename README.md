@@ -54,7 +54,7 @@ Springer, 2005
 + [x] El desafío de la Ingeniería del Software
 + [x] El enfoque de la Ingeniería del Software
 
-### **El proceso del software**
+### **El proceso del software** [[7-proc-de-desarrollo]]
 + [ ] Procesos, Modelo de procesos. Componentes. Enfoque ETVX.
 + [ ] Características deseadas del proceso del software: Predecible y repetible. Tolerante a cambios, Testeable y Mantenible.
 + [ ] Proceso de desarrollo del software, etapas fundamentales.
@@ -112,9 +112,8 @@ Springer, 2005
 + [x] Proceso de codificación: Incremental, Dirigido por test, Programación de a pares, Control del código fuente y construcción (build).
 + [x] Refactorización: Conceptos básicos, Malos olores, refactorizaciones comunes,
 + [x] Verificación: Inspección del código, test de unidad, Análisis estático, métodos formales
-+ [ ] Métricas: Tamaño y complejidad.
 
-### **Testing** **
+### **Testing** 
 + [ ] Conceptos fundamentales: Defecto y desperfecto  (fault & failure), oráculos, casos de test y criterios de selección, psicología del test.
 + [ ] Testing de caja negra: Particionado por clases de equivalencia, Análisis de valores limites, gramfo de causa-efecto, testing de a pares, casos especiales, testing basado en estados (Máquinas de esteado finitas)
 + [ ] Testing de caja blanca: Criterios basados en el flujo de control, criterios basados en flujo de datos,
@@ -130,8 +129,3 @@ Springer, 2005
 + [ ] Responsabilidad y ética profesional.
 
 ** Se toma SIEMPRE testing
-
-[[Ingenieria/ing-soft-1/SCRUM]]
-Aunque son los equipos de desarrollo de software los que utilizan con mayor frecuencia este tipo de scrum, sus principios y lecciones se pueden aplicar a todo tipo de trabajo en equipo. Esta es una de las razones por las que es tan popular. Aunque se considera a menudo un marco de gestión de proyectos ágil, scrum incluye un conjunto de reuniones, herramientas y funciones que, de forma coordinada, ayudan a los equipos a estructurar y gestionar su trabajo.
-
-En este artículo, a

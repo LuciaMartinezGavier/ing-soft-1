@@ -71,3 +71,4 @@ Eventos de la iteración SPRINT: (en general, 2 semanas de trabajo)
 
 + Herramientas de análisis: Velocity, *Burndown Charts*.
 
+Aunque son los equipos de desarrollo de software los que utilizan con mayor frecuencia este tipo de scrum, sus principios y lecciones se pueden aplicar a todo tipo de trabajo en equipo. Esta es una de las razones por las que es tan popular. Aunque se considera a menudo un marco de gestión de proyectos ágil, scrum incluye un conjunto de reuniones, herramientas y funciones que, de forma coordinada, ayudan a los equipos a estructurar y gestionar su trabajo.
