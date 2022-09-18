@@ -60,6 +60,8 @@ un usuario puede ver estadísticas acumuladas por robot
 + se puede repetir bots
 + No genera estadísticas
 + da resultado
++  No es pública
++ No hay caso de uso de crear simulación
 
 **Partida**  
 +	Multiplayer
@@ -69,6 +71,11 @@ un usuario puede ver estadísticas acumuladas por robot
 +	Genera estadísticas
 + Luego de los n juegos hay un botón para ir al lobby
 
+**Estadísticas**
++ Libertad wii.
++ No poner "etc", "por ejemplo", "tal como", ...
++ El tipo de estadísticas van en el alcance.
++ Tener en cuenta que pueden empatar (datos para desempatar? depende de nosotros).
 
 Orden
 Scan → Ataque → Movimiento
@@ -149,6 +156,40 @@ partida por tics
 
 
 ## Más preguntas
++ ¿Cómo se llama el actor que todavía no es usuario? ¿Es el mismo que está por iniciar sesión?
++ ¿Pausar simulación está bien que sea un método de simulación?
++ Subir_robot es un método de robot?
++ Cuando uno crea  la partida debe elegir su robot? O lo hace al iniciarla?
+
+## Check list
++ que no haya nada de interfaz de usuario en los casos de uso.
+### Clases
++ Ponerle nombre a las relaciones del diagrama de clase
++ No debe haber clases sin relaciones
++ Hay un estado permanente o transitorio que vincula dos clases. No tiene que haber relaciones de "x llama a y"
++ todas las clases deben tener atributos
++ Agregar puntaje del bot (no puede ir en partida ni en juego)
++ No debe haber clases que se relacionan consigo mismas
+
+### DFD
++ Se pueden entregar varios DFD de acuerdo a los diferentes casos de uso. Usuario, Partida, Estadísticas
++ Tipito de palitos es actor externo. (Registrar usuario)
++ El dfd está mal si:
+
++ En el dfd tiene que estar todos las clases que son permanentes en diagrama de clases clase
++ Los cuadrados son los objetos (cada instancia)
++ Los transformadores NO CREAN DATOS
++ "data de usuario" a secas: hay que especificar en algun lado qué incluye.
++ Hay usuarios que directamente se conectan a la base de datos.
++ Hay nociones de interfaz de usuario
++ Hay noción de tiempo o secuencialidad: no hacer crear→iniciar→ver estadísticas. No tiene que haber secuencias.
++ Hay transformadores que no tienen flechas que salen.
+
+#fixme 
++ agregar más flechas de la base de datos
++ agregar mas \_A\_ 
+
+## Preguntas
 + ¿Cómo se llama el actor que todavía no es usuario? ¿Es el mismo que está por iniciar sesión?
 + ¿Pausar simulación está bien que sea un método de simulación?
 + Subir_robot es un método de robot?
