@@ -93,3 +93,9 @@ A continuación se especifican 6 casos de uso. Los conjuntos y validaciones de d
 + Ver estadísticas particulares de un robot.
 + Ver estadísticas de partida.
 
+### Relacionados a los robots
++ Subir robot
++ Eliminar robot
++ Cambiar código de robot
++ Cambiar avatar de robot
+

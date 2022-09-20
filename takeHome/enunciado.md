@@ -174,23 +174,27 @@ partida por tics
 ### DFD
 + Se pueden entregar varios DFD de acuerdo a los diferentes casos de uso. Usuario, Partida, Estadísticas
 + Tipito de palitos es actor externo. (Registrar usuario)
-+ El dfd está mal si:
-
 + En el dfd tiene que estar todos las clases que son permanentes en diagrama de clases clase
-+ Los cuadrados son los objetos (cada instancia)
-+ Los transformadores NO CREAN DATOS
++ Los cuadrados son los objetos (cada instancia
++ + Los transformadores NO CREAN DATOS
++ El dfd está mal si:
 + "data de usuario" a secas: hay que especificar en algun lado qué incluye.
 + Hay usuarios que directamente se conectan a la base de datos.
 + Hay nociones de interfaz de usuario
 + Hay noción de tiempo o secuencialidad: no hacer crear→iniciar→ver estadísticas. No tiene que haber secuencias.
 + Hay transformadores que no tienen flechas que salen.
 
-#fixme 
-+ agregar más flechas de la base de datos
-+ agregar mas \_A\_ 
 
 ## Preguntas
-+ ¿Cómo se llama el actor que todavía no es usuario? ¿Es el mismo que está por iniciar sesión?
-+ ¿Pausar simulación está bien que sea un método de simulación?
-+ Subir_robot es un método de robot?
-+ Cuando uno crea  la partida debe elegir su robot? O lo hace al iniciarla?
+
+### Sobre dfd
++ Que se hace con los datos que se deben validar? Se asume que la ida y vuelta está hecha o solo van los datos con el flujo principal?
++ ¿Cómo representamos el mail para validar contraseña y usuario?
++ Qué pasa con los flujos de datos que solo son de lectura. Por ejemplo, ver partidas creadas. Hay que poner un transformador?
++ En el dfd van los datos de control? es decir los pedidos y solicitudes del usuario?
++ Transformadores a los que les entra y les sale el mismo dato???
++ Los datos que van a la base de datos deberían ser como id_user, nuevo_avatar o usuario modificiado
+
+
+#fixme  estadísticas de robot para actualizar, es realmente necesario?
+#fixme  validacion para todos los datos que deben ser unicos
