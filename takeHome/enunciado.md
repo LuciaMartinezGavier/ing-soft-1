@@ -188,13 +188,11 @@ partida por tics
 ## Preguntas
 
 ### Sobre dfd
-+ Que se hace con los datos que se deben validar? Se asume que la ida y vuelta está hecha o solo van los datos con el flujo principal?
-+ ¿Cómo representamos el mail para validar contraseña y usuario?
-+ Qué pasa con los flujos de datos que solo son de lectura. Por ejemplo, ver partidas creadas. Hay que poner un transformador?
-+ En el dfd van los datos de control? es decir los pedidos y solicitudes del usuario?
-+ Transformadores a los que les entra y les sale el mismo dato???
-+ Los datos que van a la base de datos deberían ser como id_user, nuevo_avatar o usuario modificiado
++ Que se hace con los datos que se deben validar? Se asume que la ida y vuelta está hecha o solo van los datos con el flujo principal?solo flujo principal igual si se necesitan datos se piden
++ ¿Cómo representamos el mail para validar contraseña y usuario? link de validacion a actor externo
++ Qué pasa con los flujos de datos que solo son de lectura. Por ejemplo, ver partidas creadas. Hay que poner un transformador? si
++ En el dfd van los datos de control? es decir los pedidos y solicitudes del usuario? no
++ Transformadores a los que les entra y les sale el mismo dato??? si
++ Los datos que van a la base de datos deberían ser como id_user, nuevo_avatar o usuario modificiado : solo el dato relevante
 
 
-#fixme  estadísticas de robot para actualizar, es realmente necesario?
-#fixme  validacion para todos los datos que deben ser unicos

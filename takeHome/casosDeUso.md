@@ -86,6 +86,7 @@ A continuación se especifican 6 casos de uso. Los conjuntos y validaciones de d
 - Entrar al lobby (rondas, juegos, jugadores unidos).
 - Ver partidas disponibles
 - Ver partidas creadas (no terminadas)
+- Ver historial de partidas terminadas
 - Salir de la partida 
 
 ### Relacionados a las estadísticas
