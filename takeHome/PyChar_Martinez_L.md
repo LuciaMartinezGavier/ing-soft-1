@@ -20,64 +20,53 @@ Los usuarios podrán ver un ranking de todos los robots en el sistema que se cal
 
 ### Datos y restricciones
 #### Usuario
-
-| Dato       | Restricciones                                                                                                       |
-| ---------- | ------------------------------------------------------------------------------------------------------------------- |
-| Email      | Ser único. Tener formato de mail. Es obligatorio.                                                                   |
-| Nombre     | Ser único. Es obligatorio.                                                                                          |
-| Contraseña | Tener al menos 8 caracteres, al menos una mayúscula, al menos una minúscula y exactamente un guión. Es obligatorio. |
-| Avatar     | Ser una imagen.                                                                                                     |
+- **Email**: Debe ser único y tener formato de mail. Es obligatorio.  
+- **Nombre**: Debe ser único. Es obligatorio. 
+- **Contraseña**: Debe tener al menos 8 caracteres, al menos una mayúscula, al menos una minúscula y exactamente un guión. Es obligatorio.
+- **Avatar**: Debe ser una imagen. 
 
 #### Simulación
-
-| Dato               | Restricciones                                                                                                                          |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------- |
-| Cantidad de rondas | Ser un número entero entre 1 y 10 000. Es obligatorio.                                                                                 |
-| Robots             | No ser más de 4 robots, ni menos de 2. Ser robots anteriormente subidos por el usuario o los provistos por el sistema. Es obligatorio. |
+- **Cantidad de rondas**: Debe ser un número entero entre 1 y 10 000. Es obligatorio.                                                                                 
+- **Robots**: No pueden ser más de 4 robots, ni menos de 2. Deben ser robots anteriormente subidos por el usuario o los provistos por el sistema. Es obligatorio.
 
 #### Partida
-
-| Dato                         | Restricciones                                           |
-| ---------------------------- | ------------------------------------------------------- |
-| Nombre                       | Ser único. Es obligatorio.                              |
-| Cantidad de juegos           | Ser un número  entero entre 1 y 10 000. Es obligatorio. |
-| Cantidad de rondas por juego | Ser un número entero entre 1 y 200. Es obligatorio.     |
-| Cantidad de jugadores        | Ser 2, 3 o 4. Es obligatorio.                           |
+- **Nombre**: Debe ser único. Es obligatorio.
+- **Cantidad de juegos**: Debe ser un número  entero entre 1 y 10 000. Es obligatorio.
+- **Cantidad de rondas por juego**: Debe ser un número entero entre 1 y 200. Es obligatorio.
+- **Cantidad de jugadores**: Debe ser 2, 3 o 4. Es obligatorio.
 
 #### Robot 
+- **Nombre**: Debe ser único. Es obligatorio.
+- **Avatar**: Debe ser una imagen.
+- **Código**: Debe implementar al menos los métodos `initialize()` y  `response()`, no implementar métodos internos, y debe cumplir con restricciones de seguridad extra. Es obligatorio. 
 
-| Dato   | Restricciones                                                                                                                                                   |
-|:------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Nombre | Ser único. Es obligatorio.                                                                                                                                      |
-| Avatar | Ser una imagen.                                                                                                                                                 |
-| Código | Implementar al menos los métodos `initialize()` y  `response()`. No implementar métodos internos. Cumplir con restricciones de seguridad extra. Es obligatorio. |
-
-%%
  # Casos de uso
 A continuación se especifican 6 casos de uso. Los conjuntos y validaciones de datos se pueden ver detalladas en la sección de *Alcance: Datos y Restricciones*.
  
 ## 1 Registrarse
 + **Caso de uso:** Registrarse
-+ **Actor principal:** Usuario no registrado.
-+ **Pre-condición:** El usuario no está logueado.
++ **Actor principal:** Actor externo.
++ **Pre-condición:** El actor externo no está logueado.
 + **Escenario exitoso:** 
-	1. El usuario ingresa sus datos.
-	2. El sistema informa que se registró una nueva cuenta, y envía un mail de verificación.
-	3. El usuario, recibe el mail y verifica su cuenta.
-	4. El sistema muestra una confirmación de que se ha verificado correctamente la cuenta.
+	1. El actor externo solicita registrarse.
+	2. El sistema le pide al actor externo que ingrese los datos necesarios para crear la cuenta.
+	3. El actor externo ingresa sus datos.
+	4. El sistema informa que se registró una nueva cuenta, y envía un mail de verificación.
 + **Escenarios excepcionales:**
-	+ El usuario no ingresa algún dato obligatorio: El sistema le informa qué campo debe completar.
-	+ El usuario ingresa un dato con un formato incorrecto: El sistema le informa qué campo debe corregir.
-	+ El usuario ingresa un mail que ya fue registrado: Se le informa que ya tiene un usuario en la plataforma con ese mail.
-	+   El usuario ingresa un nombre de usuario que ya fue registrado: Se le informa que ese nombre de usuario ya está tomado.
+	+ El actor externo no ingresa algún dato obligatorio: El sistema le informa qué campo debe completar.
+	+ El actor externo ingresa un dato con un formato incorrecto: El sistema le informa qué campo debe corregir.
+	+ El actor externo ingresa un mail que ya fue registrado: Se le informa que ya tiene un usuario en la plataforma con ese mail.
+	+   El actor externo ingresa un nombre de usuario que ya fue registrado: Se le informa que ese nombre de usuario ya está tomado.
 
-## 2 Cambiar Password
+## 2 Cambiar Contraseña
 + **Caso de uso:** Cambiar password
 + **Actor principal:** Usuario
 + **Pre-condición:** El usuario debe estar logueado.
 + **Escenario exitoso:**
-	1. El usuario emite una solicitud de cambio de contraseña. Para ello ingresa su contraseña actual y la nueva contraseña junto con una confirmación de la misma.
-	2. El sistema informa que el cambio de contraseña fue exitoso. Finalmente, envía un mail al usuario notificando dicho cambio.
+	1. El usuario emite una solicitud de cambio de contraseña. 
+	2. El sistema le pide el usuario ingresar su contraseña actual y la nueva contraseña junto con una confirmación de la misma.
+	3. El usuario ingresa llena los campos requeridos.
+	4. El sistema informa que el cambio de contraseña fue exitoso. Finalmente, envía un mail al usuario notificando dicho cambio.
 + **Escenarios excepcionales:**
 	+ El usuario ingresa mal su contraseña actual: Se le informa del error y se le permite intentar de nuevo.
 	+ El usuario ingresa una contraseña nueva que no cumple las restricciones: Se le informa del error y se le permite intentar de nuevo.
@@ -103,7 +92,7 @@ A continuación se especifican 6 casos de uso. Los conjuntos y validaciones de d
 	1. El usuario solicita crear una partida.
 	2. El sistema le pide al usuario ingresar los datos de la partida y elegir su robot.
 	3. El usuario ingresa los datos solicitados y especifica cuál de sus robots quiere usar.
-	5. El sistema agrega la partida a la lista de partidas disponibles. Y muestra una confirmación de que se creó con éxito.
+	4. El sistema agrega la partida a la lista de partidas disponibles. Y muestra una confirmación de que se creó con éxito.
 + **Escenarios excepcionales:**
 	+ No se completan o especifican todos los datos de la partida: El sistema informa al usuario los campos faltantes y le permite volver a intentar.
 	+ Alguno de los datos no es válido: Se le informa al usuario del error y se le permite volver a intentar.
@@ -113,8 +102,8 @@ A continuación se especifican 6 casos de uso. Los conjuntos y validaciones de d
 + **Actor principal:** Usuario
 + **Pre-condición:** El usuario debe estar logueado. El usuario creó una partida que actualmente se encuentra llena.
 + **Escenario exitoso:** 
-	1. El usuario solicita ejecutar la partida.
-	2. El sistema computa los resultados de los juegos, y muestra las estadísticas de la partida.
+	1. El usuario solicita ejecutar una partida.
+	2. El sistema computa los resultados de los juegos, y muestra las estadísticas de dicha partida.
 
 ## 6 Subir un robot
 + **Caso de uso:** Subir un robot.
@@ -128,4 +117,4 @@ A continuación se especifican 6 casos de uso. Los conjuntos y validaciones de d
 + **Escenarios excepcionales:**
 	+ El robot subido tiene algún campo no válido: Se le informa al usuario del error y se le permite corregirlo.
 	+ El usuario no completó todos los datos obligatorios: El sistema informa del campo faltante y le pide al usuario que lo ingrese.
-%%
+
