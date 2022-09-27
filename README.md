@@ -54,12 +54,12 @@ Springer, 2005
 + [x] El desafío de la Ingeniería del Software
 + [x] El enfoque de la Ingeniería del Software
 
-### **El proceso del software** [[7-proc-de-desarrollo]]
-+ [ ] Procesos, Modelo de procesos. Componentes. Enfoque ETVX.
-+ [ ] Características deseadas del proceso del software: Predecible y repetible. Tolerante a cambios, Testeable y Mantenible.
-+ [ ] Proceso de desarrollo del software, etapas fundamentales.
-+ [ ] Modelos de procesos de desarrollo: Cascada, Prototipado, Iterativo.
-+ [ ] Otros procesos del software: Administración del proyecto, Proceso de inspección, Administración de configuración, Administración de cambios, Administración del proceso (CMM).
+### **El proceso del software** [[7-proc-de-desarrollo]] [[procesos-de-software]]
++ [x] Procesos, Modelo de procesos. Componentes. Enfoque ETVX.
++ [x] Características deseadas del proceso del software: Predecible y repetible. Tolerante a cambios, Testeable y Mantenible.
++ [x] Proceso de desarrollo del software, etapas fundamentales.
++ [x] Modelos de procesos de desarrollo: Cascada, Prototipado, Iterativo.
++ [x] Otros procesos del software: Administración del proyecto, Proceso de inspección, Administración de configuración, Administración de cambios, Administración del proceso (CMM).
 
 ### **Análisis y especificación de los requerimientos del software**  [[2-analysis-espec]]
 + [x] Requerimientos del software, Necesidad de la especificación de requerimientos, Proceso de requerimientos.
