@@ -26,7 +26,7 @@ Springer, 2005
 - [x] El desafío de la Ingeniería del Software
 - [x] El enfoque de la Ingeniería del Software
 
-### [El proceso de desarrollo](7a-proc-de-desarrollo.md) y [Procesos de Software](7b-proc-de-software.md)
+### [El proceso de desarrollo](https://docs.google.com/document/d/1FKqr_vCBeBYl5YNJjerJeG-dvZYWu2OzV1ZR3bNoaPU/edit?usp=sharing) y [Procesos de Software](https://docs.google.com/document/d/1F__JTCXRi-zQhhv1wH0ElIUSiPICChARimMiT9mkH8I/edit?usp=sharing)
 
 - [x] Procesos, Modelo de procesos. Componentes. Enfoque ETVX.
 - [x] Características deseadas del proceso del software: Predecible y repetible. Tolerante a cambios, Testeable y Mantenible.
@@ -52,7 +52,7 @@ Springer, 2005
 - [x] Arquitectura en comparación con el diseño. Preservación de la integridad de una arquitectura.
 - [x] Evaluación de las arquitecturas (método de análisis ATAM)
 
-### [Planeamiento del proyecto de software](9-planeamiento)
+### [Planeamiento del proyecto de software](https://docs.google.com/document/d/1H0WMEa_fnbRhy4eeCIM28uRcLvBYIY7inetuubHycAM/edit?usp=sharing)
 
 - [x] Planeamiento del proceso
 - [x] Estimación del esfuerzo: Incertidumbres, Construcción de los modelos (estimaciones top-down y bottom-up), el modelo COCOMO.
@@ -93,7 +93,7 @@ Springer, 2005
 - [x] Refactorización: Conceptos básicos, Malos olores, refactorizaciones comunes,
 - [x] Verificación: Inspección del código, test de unidad, Análisis estático, métodos formales
 
-### [Testing](./8-testing)
+### [Testing](https://docs.google.com/document/d/1F__JTCXRi-zQhhv1wH0ElIUSiPICChARimMiT9mkH8I/edit?usp=sharing)
 
 - [x] Conceptos fundamentales: Defecto y desperfecto (fault & failure), oráculos, casos de test y criterios de selección, psicología del test.
 - [x] Testing de caja negra: Particionado por clases de equivalencia, Análisis de valores limites, gramfo de causa-efecto, testing de a pares, casos especiales, testing basado en estados (Máquinas de esteado finitas)
@@ -111,8 +111,3 @@ Springer, 2005
 - [ ] Propiedad intelectual, licencia de software y contratos informáticos
 - [ ] Aspectos legales
 - [ ] Responsabilidad y ética profesional.
-
-## Proyecto
-
-- [FastApi](./fast-api)
-- [React](./React)
