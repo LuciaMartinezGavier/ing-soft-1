@@ -20,7 +20,7 @@ Springer, 2005
 
 - Objetivo: Planear, ejecutar y administrar un software de tamaño pequeño.
 
-### [Introducción](./1-intro)
+### [Introducción](./1-intro.md)
 
 - [x] El dominio del problema
 - [x] El desafío de la Ingeniería del Software
@@ -34,7 +34,7 @@ Springer, 2005
 - [x] Modelos de procesos de desarrollo: Cascada, Prototipado, Iterativo.
 - [x] Otros procesos del software: Administración del proyecto, Proceso de inspección, Administración de configuración, Administración de cambios, Administración del proceso (CMM).
 
-### [Análisis y especificación de los requerimientos del software](./2-analysis-espec)
+### [Análisis y especificación de los requerimientos del software](./2-analysis-espec.md)
 
 - [x] Requerimientos del software, Necesidad de la especificación de requerimientos, Proceso de requerimientos.
 - [x] Análisis del problema: Enfoque informal, Modelo de flujo de datos (DFD), Modelo orientado a objetos (UML), Prototipado.
@@ -43,7 +43,7 @@ Springer, 2005
 - [x] Validación
 - [x] Métricas: Tamaño, Calidad
 
-### [Arquitectura del software](./3-arquitectura)
+### [Arquitectura del software](./3-arquitectura.md)
 
 - [x] Rol de la arquitectura del software
 - [x] Vistas: Módulos, Componentes y conectores, Asignación de recursos
@@ -61,7 +61,7 @@ Springer, 2005
 - [x] Administración del Riesgo: Conceptos, Evaluación, Control
 - [x] Planeamiento del Seguimiento del proyecto: Mediciones, seguimiento observacional, registro del seguimiento.
 
-### [Diseño de alto nivel](./4-diseño-alto-nivel)
+### [Diseño de alto nivel](./4-dise%C3%B1o-alto-nivel.md)
 
 #### Diseño orientado a funciones
 
@@ -80,13 +80,13 @@ Springer, 2005
 - [x] Una metodología de diseño: Modelado dinámico, modelado funcional, definición de clases y operaciones, Optimización.
 - [x] Métricas
 
-### [Diseño detallado](./5-diseño-detallado)
+### [Diseño detallado](./5-dise%C3%B1o-detallado.md)
 
 - [x] Lenguaje de diseño de procesos (PDL). Diseño lógico (del algoritmo). Modelo de estado de clases (Autómatas de estado nito). Refinamiento en abstracciones de datos e invariantes de representación.
 - [x] Verificación: Recorrido del diseño, Revisión crítica (bajo proceso de inspección), verificación de consistencia y uso de técnicas formales
 - [x] Métricas. Complejidad Ciclomática, Vínculos de datos, Métricas de cohesión
 
-### [Codificación](6-codificación)
+### [Codificación](6-codificaci%C3%B3n.md)
 
 - [x] Principios y pautas para la programación: Errores comunes, Programación estructurada, ocultamiento de la información, prácticas de programación, estándares de codificación
 - [x] Proceso de codificación: Incremental, Dirigido por test, Programación de a pares, Control del código fuente y construcción (build).
