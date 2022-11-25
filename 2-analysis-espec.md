@@ -709,4 +709,4 @@ control de calidad usadas en el proceso en la fase de requerimientos.
 
 ---
 
-[Práctico](./práctico/practico2)
+[Práctico](./práctico/practico2.md)

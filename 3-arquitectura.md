@@ -286,4 +286,4 @@ CBAM: _Cost-Benefit Analysis Method_
 
 ---
 
-[Practico3](./práctico/practico3)
+[Practico3](./práctico/practico3.md)

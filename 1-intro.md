@@ -179,4 +179,4 @@ Se cumplen...
 
 ---
 
-[Práctico 1](práctico/practico1)
+[Práctico 1](práctico/practico1.md)

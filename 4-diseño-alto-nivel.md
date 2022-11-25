@@ -636,4 +636,4 @@ Muy significativo en la predicción de clases propensas a errores.
 
 ---
 
-[Practico](./práctico/practico4)
+[Practico](./práctico/practico4.md)
